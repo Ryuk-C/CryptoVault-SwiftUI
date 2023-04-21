@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		2B041D8B29F30AA2005127C7 /* CryptoVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041D8A29F30AA2005127C7 /* CryptoVaultApp.swift */; };
-		2B041D8D29F30AA2005127C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041D8C29F30AA2005127C7 /* ContentView.swift */; };
 		2B041D8F29F30AA4005127C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B041D8E29F30AA4005127C7 /* Assets.xcassets */; };
 		2B041D9229F30AA4005127C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B041D9129F30AA4005127C7 /* Preview Assets.xcassets */; };
 		2B041D9C29F30AA4005127C7 /* CryptoVaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041D9B29F30AA4005127C7 /* CryptoVaultTests.swift */; };
 		2B041DA629F30AA4005127C7 /* CryptoVaultUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DA529F30AA4005127C7 /* CryptoVaultUITests.swift */; };
 		2B041DA829F30AA4005127C7 /* CryptoVaultUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DA729F30AA4005127C7 /* CryptoVaultUITestsLaunchTests.swift */; };
+		2B041DB829F30FEA005127C7 /* SplashUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DB729F30FEA005127C7 /* SplashUIView.swift */; };
+		2B041DBB29F310D6005127C7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2B041DBA29F310D6005127C7 /* Kingfisher */; };
+		2B041DBE29F310E7005127C7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2B041DBD29F310E7005127C7 /* Alamofire */; };
+		2B041DC429F31159005127C7 /* NetworkErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DC329F31159005127C7 /* NetworkErrorModel.swift */; };
+		2B041DC629F31190005127C7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DC529F31190005127C7 /* Service.swift */; };
+		2B041DC929F3124D005127C7 /* anim_splashcrypto.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B041DC829F3124D005127C7 /* anim_splashcrypto.json */; };
+		2B041DCC29F312CF005127C7 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DCB29F312CF005127C7 /* LottieView.swift */; };
+		2B041DD229F3149B005127C7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2B041DD129F3149B005127C7 /* Lottie */; };
+		2B041DD529F3165F005127C7 /* Library3amsoft.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B041DD429F3165F005127C7 /* Library3amsoft.otf */; };
+		2B041DD829F31770005127C7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DD729F31770005127C7 /* Extensions.swift */; };
+		2B041DDF29F31BB2005127C7 /* TabbarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DDE29F31BB2005127C7 /* TabbarUIView.swift */; };
+		2B041DE129F31C25005127C7 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE029F31C25005127C7 /* HomePage.swift */; };
+		2B041DE329F31CF0005127C7 /* NewsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE229F31CF0005127C7 /* NewsPage.swift */; };
+		2B041DE529F31CFD005127C7 /* FavoritesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE429F31CFD005127C7 /* FavoritesPage.swift */; };
+		2B041DE729F31D08005127C7 /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE629F31D08005127C7 /* InfoPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +50,6 @@
 /* Begin PBXFileReference section */
 		2B041D8729F30AA2005127C7 /* CryptoVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B041D8A29F30AA2005127C7 /* CryptoVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoVaultApp.swift; sourceTree = "<group>"; };
-		2B041D8C29F30AA2005127C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2B041D8E29F30AA4005127C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B041D9129F30AA4005127C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B041D9729F30AA4005127C7 /* CryptoVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +57,19 @@
 		2B041DA129F30AA4005127C7 /* CryptoVaultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoVaultUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B041DA529F30AA4005127C7 /* CryptoVaultUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoVaultUITests.swift; sourceTree = "<group>"; };
 		2B041DA729F30AA4005127C7 /* CryptoVaultUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoVaultUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2B041DB729F30FEA005127C7 /* SplashUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIView.swift; sourceTree = "<group>"; };
+		2B041DC329F31159005127C7 /* NetworkErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorModel.swift; sourceTree = "<group>"; };
+		2B041DC529F31190005127C7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		2B041DC829F3124D005127C7 /* anim_splashcrypto.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = anim_splashcrypto.json; sourceTree = "<group>"; };
+		2B041DCB29F312CF005127C7 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		2B041DD429F3165F005127C7 /* Library3amsoft.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Library3amsoft.otf; sourceTree = "<group>"; };
+		2B041DD629F3166F005127C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2B041DD729F31770005127C7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2B041DDE29F31BB2005127C7 /* TabbarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarUIView.swift; sourceTree = "<group>"; };
+		2B041DE029F31C25005127C7 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		2B041DE229F31CF0005127C7 /* NewsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPage.swift; sourceTree = "<group>"; };
+		2B041DE429F31CFD005127C7 /* FavoritesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPage.swift; sourceTree = "<group>"; };
+		2B041DE629F31D08005127C7 /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B041DBB29F310D6005127C7 /* Kingfisher in Frameworks */,
+				2B041DBE29F310E7005127C7 /* Alamofire in Frameworks */,
+				2B041DD229F3149B005127C7 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +123,14 @@
 		2B041D8929F30AA2005127C7 /* CryptoVault */ = {
 			isa = PBXGroup;
 			children = (
+				2B041DD629F3166F005127C7 /* Info.plist */,
+				2B041DD329F3161E005127C7 /* Fonts */,
+				2B041DCA29F3129F005127C7 /* Helper */,
+				2B041DC729F3121A005127C7 /* Lotties */,
+				2B041DC229F31142005127C7 /* Model */,
+				2B041DB529F30FBC005127C7 /* View */,
+				2B041DB429F30FAB005127C7 /* Remote */,
 				2B041D8A29F30AA2005127C7 /* CryptoVaultApp.swift */,
-				2B041D8C29F30AA2005127C7 /* ContentView.swift */,
 				2B041D8E29F30AA4005127C7 /* Assets.xcassets */,
 				2B041D9029F30AA4005127C7 /* Preview Content */,
 			);
@@ -127,6 +162,108 @@
 			path = CryptoVaultUITests;
 			sourceTree = "<group>";
 		};
+		2B041DB429F30FAB005127C7 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DC529F31190005127C7 /* Service.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		2B041DB529F30FBC005127C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DB629F30FC4005127C7 /* Splash */,
+				2B041DD929F31B2F005127C7 /* Tabbar */,
+				2B041DDD29F31B7C005127C7 /* Info */,
+				2B041DDC29F31B6C005127C7 /* Favorites */,
+				2B041DDB29F31B64005127C7 /* News */,
+				2B041DDA29F31B5D005127C7 /* Home */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B041DB629F30FC4005127C7 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DB729F30FEA005127C7 /* SplashUIView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		2B041DC229F31142005127C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DC329F31159005127C7 /* NetworkErrorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B041DC729F3121A005127C7 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DC829F3124D005127C7 /* anim_splashcrypto.json */,
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
+		2B041DCA29F3129F005127C7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DCB29F312CF005127C7 /* LottieView.swift */,
+				2B041DD729F31770005127C7 /* Extensions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2B041DD329F3161E005127C7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DD429F3165F005127C7 /* Library3amsoft.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2B041DD929F31B2F005127C7 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DDE29F31BB2005127C7 /* TabbarUIView.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		2B041DDA29F31B5D005127C7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DE029F31C25005127C7 /* HomePage.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2B041DDB29F31B64005127C7 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DE229F31CF0005127C7 /* NewsPage.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		2B041DDC29F31B6C005127C7 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DE429F31CFD005127C7 /* FavoritesPage.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		2B041DDD29F31B7C005127C7 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DE629F31D08005127C7 /* InfoPage.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +280,11 @@
 			dependencies = (
 			);
 			name = CryptoVault;
+			packageProductDependencies = (
+				2B041DBA29F310D6005127C7 /* Kingfisher */,
+				2B041DBD29F310E7005127C7 /* Alamofire */,
+				2B041DD129F3149B005127C7 /* Lottie */,
+			);
 			productName = CryptoVault;
 			productReference = 2B041D8729F30AA2005127C7 /* CryptoVault.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +357,11 @@
 				Base,
 			);
 			mainGroup = 2B041D7E29F30AA2005127C7;
+			packageReferences = (
+				2B041DB929F310D6005127C7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				2B041DBC29F310E7005127C7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2B041DD029F3149B005127C7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 2B041D8829F30AA2005127C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,8 +378,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B041DC929F3124D005127C7 /* anim_splashcrypto.json in Resources */,
 				2B041D9229F30AA4005127C7 /* Preview Assets.xcassets in Resources */,
 				2B041D8F29F30AA4005127C7 /* Assets.xcassets in Resources */,
+				2B041DD529F3165F005127C7 /* Library3amsoft.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +406,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B041D8D29F30AA2005127C7 /* ContentView.swift in Sources */,
 				2B041D8B29F30AA2005127C7 /* CryptoVaultApp.swift in Sources */,
+				2B041DD829F31770005127C7 /* Extensions.swift in Sources */,
+				2B041DC629F31190005127C7 /* Service.swift in Sources */,
+				2B041DCC29F312CF005127C7 /* LottieView.swift in Sources */,
+				2B041DE329F31CF0005127C7 /* NewsPage.swift in Sources */,
+				2B041DE729F31D08005127C7 /* InfoPage.swift in Sources */,
+				2B041DDF29F31BB2005127C7 /* TabbarUIView.swift in Sources */,
+				2B041DE529F31CFD005127C7 /* FavoritesPage.swift in Sources */,
+				2B041DE129F31C25005127C7 /* HomePage.swift in Sources */,
+				2B041DB829F30FEA005127C7 /* SplashUIView.swift in Sources */,
+				2B041DC429F31159005127C7 /* NetworkErrorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +578,14 @@
 				DEVELOPMENT_TEAM = J77597ZZ4K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoVault/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Crypto Vault";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,6 +593,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.haznedar.CryptoVault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -449,11 +613,14 @@
 				DEVELOPMENT_TEAM = J77597ZZ4K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoVault/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Crypto Vault";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +628,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.haznedar.CryptoVault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -583,6 +753,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2B041DB929F310D6005127C7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		2B041DBC29F310E7005127C7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2B041DD029F3149B005127C7 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 3.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2B041DBA29F310D6005127C7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B041DB929F310D6005127C7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		2B041DBD29F310E7005127C7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B041DBC29F310E7005127C7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		2B041DD129F3149B005127C7 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B041DD029F3149B005127C7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2B041D7F29F30AA2005127C7 /* Project object */;
 }
