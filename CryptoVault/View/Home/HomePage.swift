@@ -9,14 +9,56 @@ import SwiftUI
 
 struct HomePage: View {
     
+    @State private var screenWidth: Double = UIScreen.main.bounds.width
+    @State private var screenHeight: Double = UIScreen.main.bounds.height
+    
+    @State var searchCryptoCurrency = ""
+    @ObservedObject var viewModel = HomeViewModel()
+
     var body: some View {
         
         NavigationView {
             
-            VStack {
+            
+            ZStack {
                 
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                                
+                Color("backgroundcolor")
+                
+                VStack {
+                
+                    HStack {
+
+                        HStack {
+
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.gray.opacity(0.5))
+
+                            TextField("Search Coin", text: $searchCryptoCurrency)
+                                .foregroundColor(Color.black)
+                        }
+                            .padding()
+                            .cornerRadius(10)
+
+                    } .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.gray.opacity(0.60), lineWidth: 0.75)
+                            .background(.white)
+                            .cornerRadius(10)
+                    )
+                        .padding(.horizontal, 10)
+                        .padding(.top, 20)
+                    
+                    
+                    Spacer()
+                    
+                    Spacer()
+                    
+                }
+                
+            }
+            .onAppear{
+                
+                print(viewModel.cryptoList)
                 
             }
             .navigationBarTitleDisplayMode(.inline)

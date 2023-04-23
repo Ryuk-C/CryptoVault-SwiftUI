@@ -10,7 +10,6 @@ import SwiftUI
 struct SplashPage: View {
     
     @State private var tabbar = false
-
     
     var body: some View {
         
@@ -22,7 +21,7 @@ struct SplashPage: View {
 
                     EmptyView()
 
-                    LottieView(lottieFile: "anim_splashcrypto", speed: 1, play: true, loop: true)
+                    LottieView(lottieFile: "anim_splashcrypto", speed: 1.5, play: true, loop: true)
                         .padding(.horizontal, 20)
 
                     Text("Haznedar")
@@ -40,7 +39,7 @@ struct SplashPage: View {
             }
             .onAppear {
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 
                     tabbar = true
 
