@@ -17,7 +17,7 @@ struct HomePage: View {
     @State var filterBottomSheet: Bool = false
 
     @ObservedObject var viewModel = HomeViewModel()
-    
+
 
     var body: some View {
 

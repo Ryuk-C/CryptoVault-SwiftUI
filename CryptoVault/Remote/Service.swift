@@ -10,23 +10,23 @@ import Alamofire
 import Combine
 
 protocol ServiceProtocol {
-    
+
     func fetchCryptoMarketList(currency: Currencies) -> AnyPublisher<DataResponse<CryptoMarketList, NetworkError>, Never>
 
 }
 
 class Service {
-    
+
     static let shared = Service()
-    
-    private init() {}
-    
+
+    private init() { }
+
 }
 
-extension Service : ServiceProtocol {
-    
+extension Service: ServiceProtocol {
+
     func fetchCryptoMarketList(currency: Currencies) -> AnyPublisher<Alamofire.DataResponse<CryptoMarketList, NetworkError>, Never> {
-        
+
         let url = URL(string: Constants.BASE_URL)!
 
         let parameters: Parameters = [
@@ -47,9 +47,9 @@ extension Service : ServiceProtocol {
         }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
-        
+
     }
-    
-    
-    
+
+
+
 }
