@@ -69,14 +69,20 @@ struct CryptoMarketListElement: Codable {
 // MARK: - Roi
 struct Roi: Codable {
     let times: Double
-    //let currency: Currency
+    let currency: Currency
     let percentage: Double
 
     enum CodingKeys: String, CodingKey {
         case times = "times"
-        //case currency = "currency"
+        case currency = "currency"
         case percentage = "percentage"
     }
+}
+
+enum Currency: String, Codable {
+    case btc = "btc"
+    case eth = "eth"
+    case usd = "usd"
 }
 
 typealias CryptoMarketList = [CryptoMarketListElement]

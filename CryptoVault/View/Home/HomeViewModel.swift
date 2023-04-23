@@ -13,7 +13,8 @@ class HomeViewModel : ObservableObject {
     @Published var loading: Bool = false
     @Published var showAlert: Bool = false
     @Published var message: String = ""
-    @Published var cryptoList = [CryptoMarketList]()
+    @Published var success: String = ""
+    @Published var cryptoList = [CryptoMarketListElement]()
     
     private var cancellableSet: Set<AnyCancellable> = []
     var dataManager: ServiceProtocol
@@ -35,9 +36,10 @@ class HomeViewModel : ObservableObject {
                 
                 if dataResponse.error == nil {
                     
-                    self.cryptoList = [dataResponse.value!]
+                    self.cryptoList = dataResponse.value!
                     self.loading = false
                     self.showAlert = false
+                    self.success = "OK"
                     
                 }else {
                     
