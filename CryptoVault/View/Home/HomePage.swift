@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct HomePage: View {
-    
+
     var body: some View {
-        
+
         NavigationView {
-            
+
             VStack {
-                
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                                
-                
+
+                Text("")
+
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
                         Text("Home")
@@ -30,19 +29,19 @@ struct HomePage: View {
                 }
             }
                 .navigationBarBackButtonHidden(true)
-            
+
         }
-        .colorScheme(.light)
-                    .navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarTitle("")
+            .colorScheme(.light)
+            .navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitle("")
             .onAppear {
 
-                       UINavigationBarAppearance()
-                    .setColor(title: .white, background: .mainColor)
+            UINavigationBarAppearance()
+                .setColor(title: .white, background: .mainColor)
 
-                   }
-        
+        }
+
     }
 }
 
