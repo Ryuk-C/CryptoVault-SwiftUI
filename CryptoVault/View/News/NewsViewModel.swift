@@ -1,21 +1,21 @@
 //
-//  HomeViewModel.swift
+//  NewsViewModel.swift
 //  CryptoVault
 //
-//  Created by Cuma Haznedar on 23/04/2023.
+//  Created by Cuma Haznedar on 24/04/2023.
 //
 
 import Foundation
 import Combine
 
-class HomeViewModel: ObservableObject {
-
+class NewsViewModel : ObservableObject {
+    
     @Published var loading: Bool = false
     @Published var showAlert: Bool = false
     @Published var message: String = ""
-    @Published var success: String = ""
-    @Published var cryptoList = [CryptoMarketListElement]()
-
+    @Published var success: Int = 0
+    @Published var newsList = [Datum]()
+    
     private var cancellableSet: Set<AnyCancellable> = []
     var dataManager: ServiceProtocol
 
@@ -24,21 +24,25 @@ class HomeViewModel: ObservableObject {
 
     }
 
-    func fetchCryptoList(currency : Currencies) {
+    func fetchNewsList(language: Languages) {
 
         loading = true
         showAlert = false
 
-        dataManager.fetchCryptoMarketList(currency: currency)
+        dataManager.fetchLastNews(language: language)
             .sink { (dataResponse) in
-
+                
             if dataResponse.error == nil {
 
-                self.cryptoList = dataResponse.value!
+                self.success = dataResponse.value!.type
+                
+                if self.success == 100 {
+                    self.newsList = dataResponse.value!.data
+                }
+                
                 self.loading = false
                 self.showAlert = false
-                self.success = "OK"
-
+                
             } else {
 
                 self.loading = false
@@ -55,5 +59,5 @@ class HomeViewModel: ObservableObject {
         message = error.backendError == nil ? error.initialError.localizedDescription : error.backendError!.message
         self.showAlert = true
     }
-
+    
 }

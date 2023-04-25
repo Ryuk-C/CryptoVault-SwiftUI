@@ -18,7 +18,6 @@ struct HomePage: View {
 
     @ObservedObject var viewModel = HomeViewModel()
 
-
     var body: some View {
 
         NavigationView {
@@ -77,6 +76,9 @@ struct HomePage: View {
                     }
                 }
 
+            }
+            .onAppear{
+                viewModel.fetchCryptoList(currency: Currencies.USD)
             }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -172,7 +174,7 @@ struct CryptoListView: View {
 
     }
 
-}
+    }
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {

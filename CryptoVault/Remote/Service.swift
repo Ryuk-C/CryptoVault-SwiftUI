@@ -13,6 +13,8 @@ protocol ServiceProtocol {
 
     func fetchCryptoMarketList(currency: Currencies) -> AnyPublisher<DataResponse<CryptoMarketList, NetworkError>, Never>
 
+    func fetchLastNews(language : Languages) -> AnyPublisher<DataResponse<NewsModel, NetworkError>, Never>
+
 }
 
 class Service {
@@ -39,6 +41,31 @@ extension Service: ServiceProtocol {
         )
             .validate()
             .publishDecodable(type: CryptoMarketList.self)
+            .map { response in
+            response.mapError { error in
+                let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0) }
+                return NetworkError(initialError: error, backendError: backendError)
+            }
+        }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+
+    }
+
+    func fetchLastNews(language : Languages) -> AnyPublisher<Alamofire.DataResponse<NewsModel, NetworkError>, Never> {
+
+        let url = URL(string: Constants.NEWS_BASE_URL)!
+
+        let parameters: Parameters = [
+            "Apikey": Constants.NEWS_API_KEY,
+            "lang" : language
+        ]
+        return AF.request(url,
+            method: .get,
+            parameters: parameters
+        )
+            .validate()
+            .publishDecodable(type: NewsModel.self)
             .map { response in
             response.mapError { error in
                 let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0) }
