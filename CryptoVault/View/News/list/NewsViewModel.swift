@@ -36,19 +36,24 @@ class NewsViewModel: ObservableObject {
 
                 self.success = dataResponse.value!.type
 
-                if self.success == 100 {
+                switch dataResponse.value!.type {
+
+                case 100:
                     self.newsList = dataResponse.value!.data
+
+                default:
+                    self.showAlert = true
+                    self.message = "Oops, something went wrong. Please try again later."
                 }
-
-                self.showAlert = false
-                self.loading = false
-
+                
             } else {
 
-                self.loading = false
+                self.message = "Oops, something went wrong. Please try again later."
                 self.showAlert = true
 
             }
+                
+                self.loading = false
 
         }.store(in: &cancellableSet)
 

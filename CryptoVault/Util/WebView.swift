@@ -93,6 +93,9 @@ class WebviewController: UIViewController, WKNavigationDelegate {
             self.webview.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             ])
 
+        self.progressbar.trackTintColor = UIColor.gray.withAlphaComponent(0.55)
+        self.progressbar.tintColor = .orange
+        
         self.webview.addSubview(self.progressbar)
         self.setProgressBarPosition()
 

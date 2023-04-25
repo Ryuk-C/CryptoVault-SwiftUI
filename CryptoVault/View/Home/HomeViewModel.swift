@@ -36,12 +36,13 @@ class HomeViewModel: ObservableObject {
 
                 self.cryptoList = dataResponse.value!
                 self.success = "OK"
-                self.loading = false
                 self.showAlert = false
+                self.loading = false
 
             } else {
 
                 self.loading = false
+                self.message = "Oops, something went wrong. Please try again later."
                 self.showAlert = true
 
             }

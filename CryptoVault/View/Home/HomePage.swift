@@ -68,6 +68,24 @@ struct HomePage: View {
                                     CryptoListView(name: list.name, symbol: list.symbol.uppercased(),
                                         image: list.image, price: String(list.currentPrice), priceChange: String(list.priceChangePercentage24H)
                                     )
+
+                                }
+                            }
+                                .padding(.bottom, 10)
+                        }
+                    }
+
+                    if viewModel.loading {
+
+                        ScrollView {
+
+                            LazyVStack {
+
+                                ForEach((1...15).reversed(), id: \.self) { list in
+
+                                    CryptoListView(name: "Terra Luna Classic", symbol: "LUNA",
+                                        image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579", price: "2.974,25", priceChange: "0.49%"
+                                    )
                                         .redactShimmer(condition: viewModel.loading)
 
                                 }
@@ -75,11 +93,15 @@ struct HomePage: View {
                                 .padding(.bottom, 10)
                         }
                     }
+
                 }
 
             }
                 .onAppear {
                 viewModel.fetchCryptoList(currency: Currencies.USD)
+            }
+                .alert(viewModel.message, isPresented: $viewModel.showAlert) {
+                Button("OK", role: .cancel) { }
             }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -176,6 +198,7 @@ struct CryptoListView: View {
 
     }
 }
+
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {

@@ -13,6 +13,7 @@ struct NewsPage: View {
 
     @State private var screenWidth: Double = UIScreen.main.bounds.width
     @State private var screenHeight: Double = UIScreen.main.bounds.height
+    @State private var tabBar: UITabBar! = nil
 
     @State private var goDetail: Bool = false
     @State private var newsUrl: String = ""
@@ -56,29 +57,61 @@ struct NewsPage: View {
                                 .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
                                 .padding([.top, .bottom], 15)
                                 .padding([.trailing, .leading], 5)
+
+                        }
+
+                    }
+
+                    if viewModel.loading {
+
+                        ScrollView {
+
+                            WaterfallGrid((1...15).reversed(), id: \.self) { news in
+
+                                NewsCardVerticalView(title: "They have not explained how members of the public got hold of the suspects.", imageUrl: "news.imageurl", source: "BBC News", dateOfNews: "12.09.2023")
+                            }
+                                .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
+                                .padding([.top, .bottom], 15)
+                                .padding([.trailing, .leading], 5)
                                 .redactShimmer(condition: viewModel.loading)
 
                         }
 
                     }
 
+
                 }
-                    .onAppear {
-                    viewModel.fetchNewsList(language: Languages.EN)
+
+                NavigationLink(destination: NewsDetailsPage(url: newsUrl, source: newsSource ?? "News", title: newsTitle ?? "", urlToImage: newsImageUrl ?? "", publishedAt: newsPublishedAt ?? "")
+                        .onAppear { self.tabBar.isHidden = true }
+                        .navigationBarTitle("", displayMode: .inline)
+                    , isActive: $goDetail) {
+
+
                 }
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        HStack {
-                            Text("News")
-                                .font(.system(size: 20, weight: .heavy, design: .rounded))
-                                .foregroundColor(Color.white)
-                        }
-                    }
+
+            }.onAppear {
+                viewModel.fetchNewsList(language: Languages.EN)
+
+                if(tabBar != nil) {
+                    self.tabBar.isHidden = false
                 }
-                    .navigationBarBackButtonHidden(true)
 
             }
+                .alert(viewModel.message, isPresented: $viewModel.showAlert) {
+                Button("OK", role: .cancel) { }
+            }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("News")
+                            .font(.system(size: 20, weight: .heavy, design: .rounded))
+                            .foregroundColor(Color.white)
+                    }
+                }
+            }
+                .navigationBarBackButtonHidden(true)
 
         }
             .colorScheme(.light)
@@ -91,7 +124,9 @@ struct NewsPage: View {
                 .setColor(title: .white, background: .mainColor)
 
         }
-
+            .background(TabBarAccessor { tabbar in // << here !!
+                        self.tabBar = tabbar
+                    })
     }
 }
 
