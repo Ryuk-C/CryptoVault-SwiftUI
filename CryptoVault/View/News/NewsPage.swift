@@ -35,14 +35,14 @@ struct NewsPage: View {
 
                                   WaterfallGrid(viewModel.newsList, id: \.url) { news in
 
-                                      NewsCardVerticalView(title: news.title ?? "", imageUrl: news.imageurl ?? "https://t3.ftcdn.net/jpg/03/27/55/60/360_F_327556002_99c7QmZmwocLwF7ywQ68ChZaBry1DbtD.jpg", source: news.sourceInfo.name ?? "News", dateOfNews: String(news.publishedOn) ?? "")
+                                      NewsCardVerticalView(title: news.title , imageUrl: news.imageurl, source: news.sourceInfo.name , dateOfNews: String(news.publishedOn) )
                                           .onTapGesture {
 
-                                          newsUrl = news.url ?? ""
-                                              newsSource = news.sourceInfo.name ?? ""
-                                          newsTitle = news.title ?? ""
-                                          newsImageUrl = news.imageurl ?? ""
-                                          newsPublishedAt = String(news.publishedOn) ?? ""
+                                              newsUrl = news.url 
+                                              newsSource = news.sourceInfo.name
+                                              newsTitle = news.title
+                                          newsImageUrl = news.imageurl
+                                          newsPublishedAt = String(news.publishedOn)
 
                                           goDetail.toggle()
 
@@ -50,8 +50,8 @@ struct NewsPage: View {
 
                                   }
                                       .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
-                                      .padding(.top, 15)
-                                      .padding([.trailing, .leading, .bottom], 5)
+                                      .padding([.top, .bottom], 15)
+                                      .padding([.trailing, .leading], 5)
 
                               }
 
@@ -104,7 +104,7 @@ struct NewsCardVerticalView: View {
                 .resizable()
                 .cornerRadius(10, corners: [.topLeft, .topRight])
                 .clipped()
-                .frame(width: UIScreen.main.bounds.width / 2 - 20, height: 140)
+                .frame(width: UIScreen.main.bounds.width / 2 - 10, height: 140)
 
             Divider()
 
