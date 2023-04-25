@@ -10,80 +10,87 @@ import Kingfisher
 import WaterfallGrid
 
 struct NewsPage: View {
-    
+
     @State private var screenWidth: Double = UIScreen.main.bounds.width
     @State private var screenHeight: Double = UIScreen.main.bounds.height
-    
+
     @State private var goDetail: Bool = false
     @State private var newsUrl: String = ""
     @State private var newsSource: String? = ""
     @State private var newsTitle: String? = ""
     @State private var newsImageUrl: String? = ""
     @State private var newsPublishedAt: String? = ""
-    
+
     @ObservedObject var viewModel = NewsViewModel()
 
     var body: some View {
 
         NavigationView {
-            
-            VStack {
-                
-                if viewModel.success == 100 {
 
-                              ScrollView {
+            ZStack {
 
-                                  WaterfallGrid(viewModel.newsList, id: \.url) { news in
+                Color("backgroundcolor").ignoresSafeArea()
 
-                                      NewsCardVerticalView(title: news.title , imageUrl: news.imageurl, source: news.sourceInfo.name , dateOfNews: String(news.publishedOn) )
-                                          .onTapGesture {
+                VStack {
 
-                                              newsUrl = news.url 
-                                              newsSource = news.sourceInfo.name
-                                              newsTitle = news.title
-                                          newsImageUrl = news.imageurl
-                                          newsPublishedAt = String(news.publishedOn)
+                    if viewModel.success == 100 {
 
-                                          goDetail.toggle()
+                        ScrollView {
 
-                                      }
+                            WaterfallGrid(viewModel.newsList, id: \.url) { news in
 
-                                  }
-                                      .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
-                                      .padding([.top, .bottom], 15)
-                                      .padding([.trailing, .leading], 5)
+                                NewsCardVerticalView(title: news.title, imageUrl: news.imageurl, source: news.sourceInfo.name, dateOfNews: String(news.publishedOn))
+                                    .onTapGesture {
 
-                              }
+                                    newsUrl = news.url
+                                    newsSource = news.sourceInfo.name
+                                    newsTitle = news.title
+                                    newsImageUrl = news.imageurl
+                                    newsPublishedAt = String(news.publishedOn)
 
-                          }
-                                
-            }
-            .onAppear{
-                viewModel.fetchNewsList(language: Languages.EN)
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Text("News")
-                            .font(.system(size: 20, weight: .heavy, design: .rounded))
-                            .foregroundColor(Color.white)
+                                    goDetail.toggle()
+
+                                }
+
+                            }
+                                .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
+                                .padding([.top, .bottom], 15)
+                                .padding([.trailing, .leading], 5)
+                                .redactShimmer(condition: viewModel.loading)
+
+                        }
+
+                    }
+
+                }
+                    .onAppear {
+                    viewModel.fetchNewsList(language: Languages.EN)
+                }
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        HStack {
+                            Text("News")
+                                .font(.system(size: 20, weight: .heavy, design: .rounded))
+                                .foregroundColor(Color.white)
+                        }
                     }
                 }
-            }
-            .navigationBarBackButtonHidden(true)
-            
-        }
-        .colorScheme(.light)
-                    .navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
-                    .navigationBarTitle("")
+
+            }
+
+        }
+            .colorScheme(.light)
+            .navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitle("")
             .onAppear {
 
-                       UINavigationBarAppearance()
-                    .setColor(title: .white, background: .mainColor)
+            UINavigationBarAppearance()
+                .setColor(title: .white, background: .mainColor)
 
-                   }
+        }
 
     }
 }
@@ -133,6 +140,9 @@ struct NewsCardVerticalView: View {
                 .padding([.leading, .trailing], 5)
 
         }
+            .background(
+            RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.white)
+        )
             .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.gray.opacity(0.3), lineWidth: 0.75)

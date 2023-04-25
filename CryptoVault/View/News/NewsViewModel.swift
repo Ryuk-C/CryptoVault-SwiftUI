@@ -8,14 +8,14 @@
 import Foundation
 import Combine
 
-class NewsViewModel : ObservableObject {
-    
+class NewsViewModel: ObservableObject {
+
     @Published var loading: Bool = false
     @Published var showAlert: Bool = false
     @Published var message: String = ""
     @Published var success: Int = 0
     @Published var newsList = [Datum]()
-    
+
     private var cancellableSet: Set<AnyCancellable> = []
     var dataManager: ServiceProtocol
 
@@ -31,18 +31,18 @@ class NewsViewModel : ObservableObject {
 
         dataManager.fetchLastNews(language: language)
             .sink { (dataResponse) in
-                
+
             if dataResponse.error == nil {
 
                 self.success = dataResponse.value!.type
-                
+
                 if self.success == 100 {
                     self.newsList = dataResponse.value!.data
                 }
-                
-                self.loading = false
+
                 self.showAlert = false
-                
+                self.loading = false
+
             } else {
 
                 self.loading = false
@@ -59,5 +59,5 @@ class NewsViewModel : ObservableObject {
         message = error.backendError == nil ? error.initialError.localizedDescription : error.backendError!.message
         self.showAlert = true
     }
-    
+
 }

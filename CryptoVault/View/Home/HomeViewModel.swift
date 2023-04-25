@@ -24,7 +24,7 @@ class HomeViewModel: ObservableObject {
 
     }
 
-    func fetchCryptoList(currency : Currencies) {
+    func fetchCryptoList(currency: Currencies) {
 
         loading = true
         showAlert = false
@@ -35,9 +35,9 @@ class HomeViewModel: ObservableObject {
             if dataResponse.error == nil {
 
                 self.cryptoList = dataResponse.value!
+                self.success = "OK"
                 self.loading = false
                 self.showAlert = false
-                self.success = "OK"
 
             } else {
 

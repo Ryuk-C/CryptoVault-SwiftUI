@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SplashPage: View {
-    
+
     @State private var tabbar = false
-    
+
     var body: some View {
-        
-        NavigationView{
-            
+
+        NavigationView {
+
             ZStack {
 
                 VStack {
@@ -30,15 +30,15 @@ struct SplashPage: View {
 
 
                 }.background(Color("maincolor"))
-                
+
                 NavigationLink(destination: TabbarUIView()
                     , isActive: $tabbar) {
 
                 }
 
             }
-            .onAppear {
-                
+                .onAppear {
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 
                     tabbar = true
@@ -46,15 +46,15 @@ struct SplashPage: View {
                 }
 
             }
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
-            
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+
         }.navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
 
     }
-    
+
 }
 
 struct SplashPage_Previews: PreviewProvider {

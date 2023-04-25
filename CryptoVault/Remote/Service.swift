@@ -13,7 +13,7 @@ protocol ServiceProtocol {
 
     func fetchCryptoMarketList(currency: Currencies) -> AnyPublisher<DataResponse<CryptoMarketList, NetworkError>, Never>
 
-    func fetchLastNews(language : Languages) -> AnyPublisher<DataResponse<NewsModel, NetworkError>, Never>
+    func fetchLastNews(language: Languages) -> AnyPublisher<DataResponse<NewsModel, NetworkError>, Never>
 
 }
 
@@ -52,13 +52,13 @@ extension Service: ServiceProtocol {
 
     }
 
-    func fetchLastNews(language : Languages) -> AnyPublisher<Alamofire.DataResponse<NewsModel, NetworkError>, Never> {
+    func fetchLastNews(language: Languages) -> AnyPublisher<Alamofire.DataResponse<NewsModel, NetworkError>, Never> {
 
         let url = URL(string: Constants.NEWS_BASE_URL)!
 
         let parameters: Parameters = [
             "Apikey": Constants.NEWS_API_KEY,
-            "lang" : language
+            "lang": language
         ]
         return AF.request(url,
             method: .get,
