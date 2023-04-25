@@ -43,17 +43,17 @@ class NewsViewModel: ObservableObject {
 
                 default:
                     self.showAlert = true
-                    self.loading = false
                     self.message = "Oops, something went wrong. Please try again later."
                 }
-
+                
             } else {
 
-                self.loading = false
                 self.message = "Oops, something went wrong. Please try again later."
                 self.showAlert = true
 
             }
+                
+                self.loading = false
 
         }.store(in: &cancellableSet)
 

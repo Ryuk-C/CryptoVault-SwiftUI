@@ -13,6 +13,7 @@ struct NewsPage: View {
 
     @State private var screenWidth: Double = UIScreen.main.bounds.width
     @State private var screenHeight: Double = UIScreen.main.bounds.height
+    @State private var tabBar: UITabBar! = nil
 
     @State private var goDetail: Bool = false
     @State private var newsUrl: String = ""
@@ -56,12 +57,11 @@ struct NewsPage: View {
                                 .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
                                 .padding([.top, .bottom], 15)
                                 .padding([.trailing, .leading], 5)
-                                .redactShimmer(condition: viewModel.loading)
 
                         }
 
                     }
-                    
+
                     if viewModel.loading {
 
                         ScrollView {
@@ -81,14 +81,26 @@ struct NewsPage: View {
 
 
                 }
-                    
+
+                NavigationLink(destination: NewsDetailsPage(url: newsUrl, source: newsSource ?? "News", title: newsTitle ?? "", urlToImage: newsImageUrl ?? "", publishedAt: newsPublishedAt ?? "")
+                        .onAppear { self.tabBar.isHidden = true }
+                        .navigationBarTitle("", displayMode: .inline)
+                    , isActive: $goDetail) {
+
+
+                }
 
             }.onAppear {
                 viewModel.fetchNewsList(language: Languages.EN)
+
+                if(tabBar != nil) {
+                    self.tabBar.isHidden = false
+                }
+
             }
-            .alert(viewModel.message, isPresented: $viewModel.showAlert) {
-                        Button("OK", role: .cancel) { }
-                    }
+                .alert(viewModel.message, isPresented: $viewModel.showAlert) {
+                Button("OK", role: .cancel) { }
+            }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -100,7 +112,6 @@ struct NewsPage: View {
                 }
             }
                 .navigationBarBackButtonHidden(true)
-            
 
         }
             .colorScheme(.light)
@@ -113,7 +124,9 @@ struct NewsPage: View {
                 .setColor(title: .white, background: .mainColor)
 
         }
-
+            .background(TabBarAccessor { tabbar in // << here !!
+                        self.tabBar = tabbar
+                    })
     }
 }
 
