@@ -27,12 +27,12 @@ struct NewsDetailsPage: View {
             HStack(spacing: 0) {
                 Image(systemName: "chevron.backward")
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.purple)
+                    .foregroundColor(.white)
                 
                 Text("Back")
                     .font(.system(size: 17, weight: .semibold, design:
                         .rounded))
-                    .foregroundColor(Color.purple)
+                    .foregroundColor(Color.white)
                     .padding(.leading, 5)
 
             }
@@ -47,7 +47,7 @@ struct NewsDetailsPage: View {
             HStack(spacing: 0) {
                 Image(systemName: "text.alignleft")
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.purple)
+                    .foregroundColor(.white)
             }
         }
     }
@@ -160,7 +160,7 @@ struct NewsDetailsPage: View {
                         HStack {
                             Text(source)
                                 .font(.system(size: 17, weight: .bold, design: .rounded))
-                                .foregroundColor(.purple)
+                                .foregroundColor(.white)
                         }
                     }
                 }
