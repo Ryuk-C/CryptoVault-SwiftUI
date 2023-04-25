@@ -18,14 +18,13 @@ struct HomePage: View {
 
     @ObservedObject var viewModel = HomeViewModel()
 
-
     var body: some View {
 
         NavigationView {
 
             ZStack(alignment: .top) {
 
-                Color("backgroundcolor")
+                Color("backgroundcolor").ignoresSafeArea()
 
                 VStack(alignment: .leading) {
 
@@ -69,14 +68,18 @@ struct HomePage: View {
                                     CryptoListView(name: list.name, symbol: list.symbol.uppercased(),
                                         image: list.image, price: String(list.currentPrice), priceChange: String(list.priceChangePercentage24H)
                                     )
+                                        .redactShimmer(condition: viewModel.loading)
 
                                 }
                             }
-                            .padding(.bottom, 10)
+                                .padding(.bottom, 10)
                         }
                     }
                 }
 
+            }
+                .onAppear {
+                viewModel.fetchCryptoList(currency: Currencies.USD)
             }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -101,7 +104,6 @@ struct HomePage: View {
                 .setColor(title: .white, background: .mainColor)
 
         }
-
     }
 }
 
@@ -140,26 +142,26 @@ struct CryptoListView: View {
 
             VStack(alignment: .trailing, spacing: 0) {
 
-                Text("$"+price)
+                Text("$" + price)
                     .font(.system(size: 16, weight: .bold, design: .rounded))
 
-                if priceChange.first == "-"{
-                    
+                if priceChange.first == "-" {
+
                     Text(priceChange + "%")
                         .font(.system(size: 13, weight: .semibold, design: .rounded))
                         .foregroundColor(.red)
                         .padding(.top, 2)
-                    
-                }else{
-                   
+
+                } else {
+
                     Text(priceChange + "%")
                         .font(.system(size: 13, weight: .semibold, design: .rounded))
                         .foregroundColor(.green)
                         .padding(.top, 2)
 
                 }
-                   
-                    
+
+
             }.padding(.trailing, 10)
 
         }.background(

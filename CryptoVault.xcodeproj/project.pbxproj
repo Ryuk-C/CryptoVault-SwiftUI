@@ -28,7 +28,14 @@
 		2B041DE329F31CF0005127C7 /* NewsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE229F31CF0005127C7 /* NewsPage.swift */; };
 		2B041DE529F31CFD005127C7 /* FavoritesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE429F31CFD005127C7 /* FavoritesPage.swift */; };
 		2B041DE729F31D08005127C7 /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE629F31D08005127C7 /* InfoPage.swift */; };
+		2B3B789929F73FC900FB3AEB /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789829F73FC900FB3AEB /* NewsModel.swift */; };
+		2B3B789B29F741C800FB3AEB /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789A29F741C800FB3AEB /* NewsViewModel.swift */; };
+		2B3B789D29F7529800FB3AEB /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789C29F7529800FB3AEB /* Languages.swift */; };
+		2B3B789F29F759F500FB3AEB /* Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789E29F759F500FB3AEB /* Shimmering.swift */; };
+		2B3B78A129F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B78A029F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift */; };
 		2B4C790729F42725007F7351 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C790629F42725007F7351 /* Constants.swift */; };
+		2BAE02EE29F68EB100A8F977 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE02ED29F68EB100A8F977 /* WebView.swift */; };
+		2BAE02F129F6905D00A8F977 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 2BAE02F029F6905D00A8F977 /* WaterfallGrid */; };
 		2BB4D65229F57EEC00BD1FCF /* CryptoMarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4D65129F57EEC00BD1FCF /* CryptoMarketModel.swift */; };
 		2BB4D65429F580DC00BD1FCF /* Currencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4D65329F580DC00BD1FCF /* Currencies.swift */; };
 		2BB4D65629F5828700BD1FCF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4D65529F5828700BD1FCF /* HomeViewModel.swift */; };
@@ -74,7 +81,13 @@
 		2B041DE229F31CF0005127C7 /* NewsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPage.swift; sourceTree = "<group>"; };
 		2B041DE429F31CFD005127C7 /* FavoritesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPage.swift; sourceTree = "<group>"; };
 		2B041DE629F31D08005127C7 /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
+		2B3B789829F73FC900FB3AEB /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		2B3B789A29F741C800FB3AEB /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		2B3B789C29F7529800FB3AEB /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		2B3B789E29F759F500FB3AEB /* Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmering.swift; sourceTree = "<group>"; };
+		2B3B78A029F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactAndShimmerViewModifier.swift; sourceTree = "<group>"; };
 		2B4C790629F42725007F7351 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2BAE02ED29F68EB100A8F977 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		2BB4D65129F57EEC00BD1FCF /* CryptoMarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketModel.swift; sourceTree = "<group>"; };
 		2BB4D65329F580DC00BD1FCF /* Currencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
 		2BB4D65529F5828700BD1FCF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B041DBB29F310D6005127C7 /* Kingfisher in Frameworks */,
+				2BAE02F129F6905D00A8F977 /* WaterfallGrid in Frameworks */,
 				2B041DBE29F310E7005127C7 /* Alamofire in Frameworks */,
 				2B041DD229F3149B005127C7 /* Lottie in Frameworks */,
 			);
@@ -204,6 +218,7 @@
 			children = (
 				2B041DC329F31159005127C7 /* NetworkErrorModel.swift */,
 				2BB4D65129F57EEC00BD1FCF /* CryptoMarketModel.swift */,
+				2B3B789829F73FC900FB3AEB /* NewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +238,10 @@
 				2B041DD729F31770005127C7 /* Extensions.swift */,
 				2B4C790629F42725007F7351 /* Constants.swift */,
 				2BB4D65329F580DC00BD1FCF /* Currencies.swift */,
+				2BAE02ED29F68EB100A8F977 /* WebView.swift */,
+				2B3B789C29F7529800FB3AEB /* Languages.swift */,
+				2B3B789E29F759F500FB3AEB /* Shimmering.swift */,
+				2B3B78A029F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -256,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				2B041DE229F31CF0005127C7 /* NewsPage.swift */,
+				2B3B789A29F741C800FB3AEB /* NewsViewModel.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -296,6 +316,7 @@
 				2B041DBA29F310D6005127C7 /* Kingfisher */,
 				2B041DBD29F310E7005127C7 /* Alamofire */,
 				2B041DD129F3149B005127C7 /* Lottie */,
+				2BAE02F029F6905D00A8F977 /* WaterfallGrid */,
 			);
 			productName = CryptoVault;
 			productReference = 2B041D8729F30AA2005127C7 /* CryptoVault.app */;
@@ -373,6 +394,7 @@
 				2B041DB929F310D6005127C7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				2B041DBC29F310E7005127C7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2B041DD029F3149B005127C7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				2BAE02EF29F6905D00A8F977 /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
 			);
 			productRefGroup = 2B041D8829F30AA2005127C7 /* Products */;
 			projectDirPath = "";
@@ -419,17 +441,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B041D8B29F30AA2005127C7 /* CryptoVaultApp.swift in Sources */,
+				2B3B789B29F741C800FB3AEB /* NewsViewModel.swift in Sources */,
+				2BAE02EE29F68EB100A8F977 /* WebView.swift in Sources */,
 				2B041DD829F31770005127C7 /* Extensions.swift in Sources */,
 				2B041DC629F31190005127C7 /* Service.swift in Sources */,
 				2B041DCC29F312CF005127C7 /* LottieView.swift in Sources */,
 				2B041DE329F31CF0005127C7 /* NewsPage.swift in Sources */,
 				2B041DE729F31D08005127C7 /* InfoPage.swift in Sources */,
+				2B3B78A129F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift in Sources */,
+				2B3B789D29F7529800FB3AEB /* Languages.swift in Sources */,
 				2B041DDF29F31BB2005127C7 /* TabbarUIView.swift in Sources */,
 				2B041DE529F31CFD005127C7 /* FavoritesPage.swift in Sources */,
 				2BB4D65429F580DC00BD1FCF /* Currencies.swift in Sources */,
 				2B041DE129F31C25005127C7 /* HomePage.swift in Sources */,
 				2B041DB829F30FEA005127C7 /* SplashUIView.swift in Sources */,
+				2B3B789F29F759F500FB3AEB /* Shimmering.swift in Sources */,
 				2B041DC429F31159005127C7 /* NetworkErrorModel.swift in Sources */,
+				2B3B789929F73FC900FB3AEB /* NewsModel.swift in Sources */,
 				2BB4D65229F57EEC00BD1FCF /* CryptoMarketModel.swift in Sources */,
 				2BB4D65629F5828700BD1FCF /* HomeViewModel.swift in Sources */,
 				2B4C790729F42725007F7351 /* Constants.swift in Sources */,
@@ -795,6 +823,14 @@
 				version = 3.5.0;
 			};
 		};
+		2BAE02EF29F6905D00A8F977 /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -812,6 +848,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2B041DD029F3149B005127C7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		2BAE02F029F6905D00A8F977 /* WaterfallGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BAE02EF29F6905D00A8F977 /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
+			productName = WaterfallGrid;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
