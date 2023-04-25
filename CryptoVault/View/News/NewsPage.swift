@@ -61,24 +61,46 @@ struct NewsPage: View {
                         }
 
                     }
+                    
+                    if viewModel.loading {
+
+                        ScrollView {
+
+                            WaterfallGrid((1...15).reversed(), id: \.self) { news in
+
+                                NewsCardVerticalView(title: "They have not explained how members of the public got hold of the suspects.", imageUrl: "news.imageurl", source: "BBC News", dateOfNews: "12.09.2023")
+                            }
+                                .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
+                                .padding([.top, .bottom], 15)
+                                .padding([.trailing, .leading], 5)
+                                .redactShimmer(condition: viewModel.loading)
+
+                        }
+
+                    }
+
 
                 }
-                    .onAppear {
-                    viewModel.fetchNewsList(language: Languages.EN)
-                }
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        HStack {
-                            Text("News")
-                                .font(.system(size: 20, weight: .heavy, design: .rounded))
-                                .foregroundColor(Color.white)
-                        }
+                    
+
+            }.onAppear {
+                viewModel.fetchNewsList(language: Languages.EN)
+            }
+            .alert(viewModel.message, isPresented: $viewModel.showAlert) {
+                        Button("OK", role: .cancel) { }
+                    }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("News")
+                            .font(.system(size: 20, weight: .heavy, design: .rounded))
+                            .foregroundColor(Color.white)
                     }
                 }
-                    .navigationBarBackButtonHidden(true)
-
             }
+                .navigationBarBackButtonHidden(true)
+            
 
         }
             .colorScheme(.light)
