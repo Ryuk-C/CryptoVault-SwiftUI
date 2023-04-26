@@ -30,7 +30,6 @@
 		2B041DE729F31D08005127C7 /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE629F31D08005127C7 /* InfoPage.swift */; };
 		2B0A2B6029F93870001DCB0F /* coingecko.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2B0A2B5F29F93870001DCB0F /* coingecko.cer */; };
 		2B0A2B6229F938AC001DCB0F /* Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0A2B6129F938AC001DCB0F /* Certificates.swift */; };
-		2B0A2B6529F93CCF001DCB0F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2B0A2B6429F93CCF001DCB0F /* SwiftyJSON */; };
 		2B0A2B6929F95039001DCB0F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0A2B6829F95039001DCB0F /* NetworkManager.swift */; };
 		2B3B789929F73FC900FB3AEB /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789829F73FC900FB3AEB /* NewsModel.swift */; };
 		2B3B789B29F741C800FB3AEB /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789A29F741C800FB3AEB /* NewsViewModel.swift */; };
@@ -112,7 +111,6 @@
 				2B041DBB29F310D6005127C7 /* Kingfisher in Frameworks */,
 				2BAE02F129F6905D00A8F977 /* WaterfallGrid in Frameworks */,
 				2B041DBE29F310E7005127C7 /* Alamofire in Frameworks */,
-				2B0A2B6529F93CCF001DCB0F /* SwiftyJSON in Frameworks */,
 				2B041DD229F3149B005127C7 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,7 +356,6 @@
 				2B041DBD29F310E7005127C7 /* Alamofire */,
 				2B041DD129F3149B005127C7 /* Lottie */,
 				2BAE02F029F6905D00A8F977 /* WaterfallGrid */,
-				2B0A2B6429F93CCF001DCB0F /* SwiftyJSON */,
 			);
 			productName = CryptoVault;
 			productReference = 2B041D8729F30AA2005127C7 /* CryptoVault.app */;
@@ -437,7 +434,6 @@
 				2B041DBC29F310E7005127C7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2B041DD029F3149B005127C7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				2BAE02EF29F6905D00A8F977 /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
-				2B0A2B6329F93CCF001DCB0F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 2B041D8829F30AA2005127C7 /* Products */;
 			projectDirPath = "";
@@ -682,7 +678,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.haznedar.CryptoVault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -717,7 +713,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.haznedar.CryptoVault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -871,14 +867,6 @@
 				version = 3.5.0;
 			};
 		};
-		2B0A2B6329F93CCF001DCB0F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		2BAE02EF29F6905D00A8F977 /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid";
@@ -904,11 +892,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2B041DD029F3149B005127C7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
-		};
-		2B0A2B6429F93CCF001DCB0F /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2B0A2B6329F93CCF001DCB0F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
 		};
 		2BAE02F029F6905D00A8F977 /* WaterfallGrid */ = {
 			isa = XCSwiftPackageProductDependency;
