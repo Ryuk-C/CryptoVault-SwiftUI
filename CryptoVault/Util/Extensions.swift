@@ -116,7 +116,7 @@ struct BlurView: View {
         HStack(spacing: 1){
             ForEach(0..<characters.count) { num in
                 Text(String(self.characters[num]))
-                    .font(Font.custom("Library3amsoft", size: 30))
+                    .font(Font.custom("Library3amsoft", size: 32))
                     .foregroundColor(Color("maincolor"))
                     .blur(radius: blurValue)
                     .opacity(opacity)

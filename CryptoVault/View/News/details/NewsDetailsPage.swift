@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewsDetailsPage: View {
     
+    var id: String = ""
     var url: String = ""
     var source: String = ""
     var title: String = ""
@@ -18,8 +19,11 @@ struct NewsDetailsPage: View {
     @State private var screenWidth: Double = UIScreen.main.bounds.width
     @State private var screenHeight: Double = UIScreen.main.bounds.height
 
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject private var viewModel = NewsDetailsViewModel()
 
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.managedObjectContext) private var viewContext
+   
     var backButton: some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
     }) {
@@ -39,7 +43,6 @@ struct NewsDetailsPage: View {
     }
     
     var body: some View {
-        
         
         NavigationView() {
                 
@@ -92,11 +95,14 @@ struct NewsDetailsPage: View {
                                             
                                             Button(action: {
                                                 
-                                               // vm.addSavedNewsData(url: url, title: title, urlToImage: urlToImage, source: source, publishedAt: publishedAt)
+                                                var values = NewsCoreDataModel(id: id, newsUrl: url,title: title, imageUrl: urlToImage, source: source, date: publishedAt)
+                                            
+                                                viewModel.toggleFavButton()
+                                                viewModel.addNews(news: values)
 
                                             }) {
                                                     HStack(spacing: 0) {
-                                                        Image(systemName: "bookmark")
+                                                        Image(systemName: viewModel.favButtonImageName)
                                                             .font(.system(size: 21))
                                                             .aspectRatio(contentMode: .fill)
                                                             .foregroundColor(.black)
@@ -117,8 +123,27 @@ struct NewsDetailsPage: View {
                         
                     }
                     
-                }.frame(width: screenWidth, height: screenHeight)
-
+                }
+                .onAppear{
+                    
+                    var values = NewsCoreDataModel(id: id, newsUrl: url,title: title, imageUrl: urlToImage, source: source, date: publishedAt)
+                    
+                    viewModel.setFavButtonImage(news: values)
+                    
+                }
+                .frame(width: screenWidth, height: screenHeight)
+                .overlay{
+                    
+                    /*if viewModel.added == false {
+                       
+                        LottieView(lottieFile: "anim_save", speed: 1, play: true, loop: false)
+                            
+                        //viewModel.added.toggle()
+                        
+                    }*/
+                   
+                    
+                }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(leading: backButton)
 
@@ -153,6 +178,6 @@ struct NewsDetailsPage: View {
 
 struct NewsDetailsPage_Previews: PreviewProvider {
     static var previews: some View {
-        NewsDetailsPage(url: "https://onmyway133.com/posts/how-to-make-bottom-sheet-in-swiftui/", source: "", title: "", urlToImage: "", publishedAt: "")
+        NewsDetailsPage(id: "", url: "https://onmyway133.com/posts/how-to-make-bottom-sheet-in-swiftui/", source: "Binance", title: "", urlToImage: "", publishedAt: "")
     }
 }

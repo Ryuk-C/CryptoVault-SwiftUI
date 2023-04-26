@@ -8,53 +8,47 @@
 import SwiftUI
 import Combine
 import CoreData
+import UIKit
 
 class NewsDetailsViewModel : ObservableObject {
     
-    private let viewContext = PersistenceController.shared.viewContext
+    @Published var savedNewsData: [NewsDatabase] = []
+    var added: Bool = false
+    var removed: Bool = false
+    @Published internal var favButtonImageName = "bookmark"
 
-    let container: NSPersistentContainer
-    @Published var newsDatabase: [NewsDatabase] = []
-    @Published var ccc: [CryptoCurrenciesDB] = []
-
-    
-    init() {
-
-        container = NSPersistentContainer(name: "CryptoVaultDatabase")
-
-        container.loadPersistentStores { (storeDescription, error) in
-            if let error = error as NSError? {
-                print("Container load failed: \(error)")
-            } else {
-                print("Succesfully loaded data!")
+    func addNews(news: NewsCoreDataModel?) {
+        if let news, !CoreDataManager.shared.isAlreadyFavorited(game: news) {
+            CoreDataManager.shared.addFavorite(newNews: news)
+        } else {
+            if let index = CoreDataManager.shared.fetchFavorites()?.firstIndex(where: { $0.newsUrl == news?.newsUrl }) {
+                CoreDataManager.shared.deleteFavorite(indexSet: .init(integer: index))
             }
         }
-
     }
     
-    func addNewsToCoreData(id: String, title: String, imageUrl: String, source: String, date: String) {
-
-        let news = NewsDatabase(context: viewContext)
-        news.id = id
-        news.title = title
-        news.imageUrl = imageUrl
-        news.source = source
-        news.date = date
-                        
-        saveData()
-
-    }
-    
-    private func saveData() {
-
-        do {
-
-            try container.viewContext.save()
-
-        } catch let error {
-
-            print("Error Saving : \(error)")
-
+    func toggleFavButton() {
+        if self.favButtonImageName == "star" {
+            favButtonImageName = "bookmark.fill"
+        } else {
+            favButtonImageName = "bookmark"
         }
     }
+    
+    func setFavButtonImage(news: NewsCoreDataModel?)  {
+        if let news, CoreDataManager.shared.isAlreadyFavorited(game: news) {
+            self.favButtonImageName = "bookmark.fill"
+        } else {
+            self.favButtonImageName = "bookmark"
+        }
+    }
+}
+
+
+struct FriendValues {
+  let id: String
+  let title: String
+  let imageUrl: String
+  let source: String
+  let date: String
 }

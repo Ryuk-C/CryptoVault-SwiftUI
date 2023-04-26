@@ -17,6 +17,7 @@ struct HomePage: View {
     @State var filterBottomSheet: Bool = false
 
     @ObservedObject var viewModel = HomeViewModel()
+    @ObservedObject var newsViewModel = NewsDetailsViewModel()
 
     var body: some View {
 
@@ -104,6 +105,7 @@ struct HomePage: View {
             }
                 .onAppear {
                 viewModel.fetchCryptoList(currency: Currencies.USD)
+                    //newsViewModel.fetchNewsData()
             }
                 .alert(viewModel.message, isPresented: $viewModel.showAlert) {
                 Button("OK", role: .cancel) { }
