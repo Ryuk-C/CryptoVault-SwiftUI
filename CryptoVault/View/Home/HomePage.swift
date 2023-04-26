@@ -63,7 +63,12 @@ struct HomePage: View {
 
                             LazyVStack {
 
-                                ForEach(viewModel.cryptoList, id: \.id) { list in
+                                ForEach(viewModel.cryptoList.filter { crypto in /// filter
+
+                                    searchCryptoCurrency.isEmpty || crypto.name.localizedStandardContains(searchCryptoCurrency) ||
+                                        crypto.symbol.localizedStandardContains(searchCryptoCurrency)
+                                }, id: \.id
+                                ) { list in
 
                                     CryptoListView(name: list.name, symbol: list.symbol.uppercased(),
                                         image: list.image, price: String(list.currentPrice), priceChange: String(list.priceChangePercentage24H)
@@ -197,6 +202,7 @@ struct CryptoListView: View {
     }
 
 }
+
 
 
 struct HomePage_Previews: PreviewProvider {
