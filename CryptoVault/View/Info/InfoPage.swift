@@ -225,8 +225,7 @@ struct InfoPage: View {
                     }
 
                 }
-
-
+                
             }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -239,6 +238,7 @@ struct InfoPage: View {
                 }
             }
                 .navigationBarBackButtonHidden(true)
+
 
         }
             .colorScheme(.light)

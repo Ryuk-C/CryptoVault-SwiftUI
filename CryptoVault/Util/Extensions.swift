@@ -100,6 +100,45 @@ extension Bundle {
     }
 }
 
+struct BlurView: View {
+    let characters: Array<String.Element>
+    let baseTime: Double
+    @State var blurValue: Double = 10
+    @State var opacity: Double = 0
+    
+    init(text:String, startTime: Double) {
+        characters = Array(text)
+        baseTime = startTime
+    }
+    
+    var body: some View {
+        
+        HStack(spacing: 1){
+            ForEach(0..<characters.count) { num in
+                Text(String(self.characters[num]))
+                    .font(Font.custom("Library3amsoft", size: 30))
+                    .foregroundColor(Color("maincolor"))
+                    .blur(radius: blurValue)
+                    .opacity(opacity)
+                    .animation(.easeInOut.delay( Double(num) * 0.10 ),
+                               value: blurValue)
+            }
+        }
+        .onAppear{
+            DispatchQueue.main.asyncAfter(deadline: .now() + baseTime) {
+                if blurValue == 0{
+                    blurValue = 10
+                    opacity = 0.01
+                }else {
+                    blurValue = 0
+                    opacity = 1
+                }
+            }
+        }
+    }
+}
+
+
 public enum Model : String {
 
     case simulator     = "simulator",

@@ -18,18 +18,19 @@ struct SplashPage: View {
             ZStack {
 
                 VStack {
+                    
+                    Spacer()
 
-                    EmptyView()
+                    Image("splash")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.horizontal, 25)
 
-                    LottieView(lottieFile: "anim_splashcrypto", speed: 1.5, play: true, loop: true)
-                        .padding(.horizontal, 20)
+                    Spacer()
 
-                    Text("Haznedar")
-                        .font(Font.custom("Library3amsoft", size: 30))
-                        .foregroundColor(.white)
+                    BlurView(text: "HAZNEDAR", startTime: 0.0)
 
-
-                }.background(Color("maincolor"))
+                }
 
                 NavigationLink(destination: TabbarUIView()
                     , isActive: $tabbar) {
@@ -39,7 +40,7 @@ struct SplashPage: View {
             }
                 .onAppear {
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.85) {
 
                     tabbar = true
 
