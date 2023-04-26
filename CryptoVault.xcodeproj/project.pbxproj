@@ -31,6 +31,7 @@
 		2B0A2B6029F93870001DCB0F /* coingecko.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2B0A2B5F29F93870001DCB0F /* coingecko.cer */; };
 		2B0A2B6229F938AC001DCB0F /* Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0A2B6129F938AC001DCB0F /* Certificates.swift */; };
 		2B0A2B6929F95039001DCB0F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0A2B6829F95039001DCB0F /* NetworkManager.swift */; };
+		2B20B54D29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B20B54B29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodeld */; };
 		2B3B789929F73FC900FB3AEB /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789829F73FC900FB3AEB /* NewsModel.swift */; };
 		2B3B789B29F741C800FB3AEB /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789A29F741C800FB3AEB /* NewsViewModel.swift */; };
 		2B3B789D29F7529800FB3AEB /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789C29F7529800FB3AEB /* Languages.swift */; };
@@ -39,6 +40,7 @@
 		2B3B78A529F76FF500FB3AEB /* NewsDetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B78A429F76FF500FB3AEB /* NewsDetailsPage.swift */; };
 		2B3B78A729F7700D00FB3AEB /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B78A629F7700D00FB3AEB /* NewsDetailsViewModel.swift */; };
 		2B4C790729F42725007F7351 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C790629F42725007F7351 /* Constants.swift */; };
+		2B91F4B729F992F700B27C0A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91F4B629F992F700B27C0A /* PersistenceController.swift */; };
 		2BAE02EE29F68EB100A8F977 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE02ED29F68EB100A8F977 /* WebView.swift */; };
 		2BAE02F129F6905D00A8F977 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 2BAE02F029F6905D00A8F977 /* WaterfallGrid */; };
 		2BB4D65229F57EEC00BD1FCF /* CryptoMarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4D65129F57EEC00BD1FCF /* CryptoMarketModel.swift */; };
@@ -89,6 +91,7 @@
 		2B0A2B5F29F93870001DCB0F /* coingecko.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = coingecko.cer; sourceTree = "<group>"; };
 		2B0A2B6129F938AC001DCB0F /* Certificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificates.swift; sourceTree = "<group>"; };
 		2B0A2B6829F95039001DCB0F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2B20B54C29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CryptoVaultDatabase.xcdatamodel; sourceTree = "<group>"; };
 		2B3B789829F73FC900FB3AEB /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		2B3B789A29F741C800FB3AEB /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		2B3B789C29F7529800FB3AEB /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 		2B3B78A429F76FF500FB3AEB /* NewsDetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsPage.swift; sourceTree = "<group>"; };
 		2B3B78A629F7700D00FB3AEB /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
 		2B4C790629F42725007F7351 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2B91F4B629F992F700B27C0A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		2BAE02ED29F68EB100A8F977 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		2BB4D65129F57EEC00BD1FCF /* CryptoMarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketModel.swift; sourceTree = "<group>"; };
 		2BB4D65329F580DC00BD1FCF /* Currencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		2B041D8929F30AA2005127C7 /* CryptoVault */ = {
 			isa = PBXGroup;
 			children = (
+				2B91F4B529F992E800B27C0A /* Database */,
 				2B0A2B5E29F9376E001DCB0F /* Certificates */,
 				2B041DD629F3166F005127C7 /* Info.plist */,
 				2B041DD329F3161E005127C7 /* Fonts */,
@@ -335,6 +340,15 @@
 			path = details;
 			sourceTree = "<group>";
 		};
+		2B91F4B529F992E800B27C0A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				2B20B54B29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodeld */,
+				2B91F4B629F992F700B27C0A /* PersistenceController.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,7 +503,9 @@
 				2B041DE329F31CF0005127C7 /* NewsPage.swift in Sources */,
 				2B041DE729F31D08005127C7 /* InfoPage.swift in Sources */,
 				2B3B78A129F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift in Sources */,
+				2B91F4B729F992F700B27C0A /* PersistenceController.swift in Sources */,
 				2B3B789D29F7529800FB3AEB /* Languages.swift in Sources */,
+				2B20B54D29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodeld in Sources */,
 				2B041DDF29F31BB2005127C7 /* TabbarUIView.swift in Sources */,
 				2B0A2B6229F938AC001DCB0F /* Certificates.swift in Sources */,
 				2B3B78A729F7700D00FB3AEB /* NewsDetailsViewModel.swift in Sources */,
@@ -899,6 +915,19 @@
 			productName = WaterfallGrid;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		2B20B54B29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2B20B54C29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodel */,
+			);
+			currentVersion = 2B20B54C29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodel */;
+			path = CryptoVaultDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2B041D7F29F30AA2005127C7 /* Project object */;
 }
