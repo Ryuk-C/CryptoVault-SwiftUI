@@ -16,3 +16,7 @@ class Constants {
     static let NEWS_API_KEY: String = "172f656d6f3196ea6bd6416cddc48c7bf17476b17f6f397755c9ee3fe250fbd6"
     
 }
+
+public enum Method: String {
+    case OPTIONS, GET, HEAD, POST, PUT, PATCH, DELETE, TRACE, CONNECT
+}

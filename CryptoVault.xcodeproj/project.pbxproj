@@ -28,6 +28,10 @@
 		2B041DE329F31CF0005127C7 /* NewsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE229F31CF0005127C7 /* NewsPage.swift */; };
 		2B041DE529F31CFD005127C7 /* FavoritesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE429F31CFD005127C7 /* FavoritesPage.swift */; };
 		2B041DE729F31D08005127C7 /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041DE629F31D08005127C7 /* InfoPage.swift */; };
+		2B0A2B6029F93870001DCB0F /* coingecko.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2B0A2B5F29F93870001DCB0F /* coingecko.cer */; };
+		2B0A2B6229F938AC001DCB0F /* Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0A2B6129F938AC001DCB0F /* Certificates.swift */; };
+		2B0A2B6529F93CCF001DCB0F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2B0A2B6429F93CCF001DCB0F /* SwiftyJSON */; };
+		2B0A2B6929F95039001DCB0F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0A2B6829F95039001DCB0F /* NetworkManager.swift */; };
 		2B3B789929F73FC900FB3AEB /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789829F73FC900FB3AEB /* NewsModel.swift */; };
 		2B3B789B29F741C800FB3AEB /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789A29F741C800FB3AEB /* NewsViewModel.swift */; };
 		2B3B789D29F7529800FB3AEB /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789C29F7529800FB3AEB /* Languages.swift */; };
@@ -83,6 +87,9 @@
 		2B041DE229F31CF0005127C7 /* NewsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPage.swift; sourceTree = "<group>"; };
 		2B041DE429F31CFD005127C7 /* FavoritesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPage.swift; sourceTree = "<group>"; };
 		2B041DE629F31D08005127C7 /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
+		2B0A2B5F29F93870001DCB0F /* coingecko.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = coingecko.cer; sourceTree = "<group>"; };
+		2B0A2B6129F938AC001DCB0F /* Certificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificates.swift; sourceTree = "<group>"; };
+		2B0A2B6829F95039001DCB0F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2B3B789829F73FC900FB3AEB /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		2B3B789A29F741C800FB3AEB /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		2B3B789C29F7529800FB3AEB /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
@@ -105,6 +112,7 @@
 				2B041DBB29F310D6005127C7 /* Kingfisher in Frameworks */,
 				2BAE02F129F6905D00A8F977 /* WaterfallGrid in Frameworks */,
 				2B041DBE29F310E7005127C7 /* Alamofire in Frameworks */,
+				2B0A2B6529F93CCF001DCB0F /* SwiftyJSON in Frameworks */,
 				2B041DD229F3149B005127C7 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +157,7 @@
 		2B041D8929F30AA2005127C7 /* CryptoVault */ = {
 			isa = PBXGroup;
 			children = (
+				2B0A2B5E29F9376E001DCB0F /* Certificates */,
 				2B041DD629F3166F005127C7 /* Info.plist */,
 				2B041DD329F3161E005127C7 /* Fonts */,
 				2B041DCA29F3129F005127C7 /* Util */,
@@ -191,7 +200,9 @@
 		2B041DB429F30FAB005127C7 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				2B0A2B6129F938AC001DCB0F /* Certificates.swift */,
 				2B041DC529F31190005127C7 /* Service.swift */,
+				2B0A2B6829F95039001DCB0F /* NetworkManager.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -300,6 +311,14 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		2B0A2B5E29F9376E001DCB0F /* Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				2B0A2B5F29F93870001DCB0F /* coingecko.cer */,
+			);
+			path = Certificates;
+			sourceTree = "<group>";
+		};
 		2B3B78A229F76FD600FB3AEB /* list */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +358,7 @@
 				2B041DBD29F310E7005127C7 /* Alamofire */,
 				2B041DD129F3149B005127C7 /* Lottie */,
 				2BAE02F029F6905D00A8F977 /* WaterfallGrid */,
+				2B0A2B6429F93CCF001DCB0F /* SwiftyJSON */,
 			);
 			productName = CryptoVault;
 			productReference = 2B041D8729F30AA2005127C7 /* CryptoVault.app */;
@@ -417,6 +437,7 @@
 				2B041DBC29F310E7005127C7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2B041DD029F3149B005127C7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				2BAE02EF29F6905D00A8F977 /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
+				2B0A2B6329F93CCF001DCB0F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 2B041D8829F30AA2005127C7 /* Products */;
 			projectDirPath = "";
@@ -434,6 +455,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B0A2B6029F93870001DCB0F /* coingecko.cer in Resources */,
 				2B041DC929F3124D005127C7 /* anim_splashcrypto.json in Resources */,
 				2B041D9229F30AA4005127C7 /* Preview Assets.xcassets in Resources */,
 				2B041D8F29F30AA4005127C7 /* Assets.xcassets in Resources */,
@@ -473,6 +495,7 @@
 				2B3B78A129F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift in Sources */,
 				2B3B789D29F7529800FB3AEB /* Languages.swift in Sources */,
 				2B041DDF29F31BB2005127C7 /* TabbarUIView.swift in Sources */,
+				2B0A2B6229F938AC001DCB0F /* Certificates.swift in Sources */,
 				2B3B78A729F7700D00FB3AEB /* NewsDetailsViewModel.swift in Sources */,
 				2B041DE529F31CFD005127C7 /* FavoritesPage.swift in Sources */,
 				2BB4D65429F580DC00BD1FCF /* Currencies.swift in Sources */,
@@ -483,6 +506,7 @@
 				2B041DC429F31159005127C7 /* NetworkErrorModel.swift in Sources */,
 				2B3B789929F73FC900FB3AEB /* NewsModel.swift in Sources */,
 				2BB4D65229F57EEC00BD1FCF /* CryptoMarketModel.swift in Sources */,
+				2B0A2B6929F95039001DCB0F /* NetworkManager.swift in Sources */,
 				2BB4D65629F5828700BD1FCF /* HomeViewModel.swift in Sources */,
 				2B4C790729F42725007F7351 /* Constants.swift in Sources */,
 			);
@@ -847,6 +871,14 @@
 				version = 3.5.0;
 			};
 		};
+		2B0A2B6329F93CCF001DCB0F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		2BAE02EF29F6905D00A8F977 /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid";
@@ -872,6 +904,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2B041DD029F3149B005127C7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		2B0A2B6429F93CCF001DCB0F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B0A2B6329F93CCF001DCB0F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 		2BAE02F029F6905D00A8F977 /* WaterfallGrid */ = {
 			isa = XCSwiftPackageProductDependency;

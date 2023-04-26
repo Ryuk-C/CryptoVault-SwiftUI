@@ -34,8 +34,10 @@ extension Service: ServiceProtocol {
         let parameters: Parameters = [
             "vs_currency": currency,
         ]
-
-        return AF.request(url,
+        
+        let session = CryptoNetworkManager.getManager()
+        
+        return session.request(url,
             method: .get,
             parameters: parameters
         )
@@ -43,6 +45,7 @@ extension Service: ServiceProtocol {
             .publishDecodable(type: CryptoMarketList.self)
             .map { response in
             response.mapError { error in
+                print(response)
                 let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0) }
                 return NetworkError(initialError: error, backendError: backendError)
             }
@@ -60,6 +63,7 @@ extension Service: ServiceProtocol {
             "Apikey": Constants.NEWS_API_KEY,
             "lang": language
         ]
+        
         return AF.request(url,
             method: .get,
             parameters: parameters
@@ -76,7 +80,5 @@ extension Service: ServiceProtocol {
             .eraseToAnyPublisher()
 
     }
-
-
 
 }

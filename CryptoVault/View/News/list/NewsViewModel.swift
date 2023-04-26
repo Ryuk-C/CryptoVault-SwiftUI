@@ -42,6 +42,10 @@ class NewsViewModel: ObservableObject {
                     self.newsList = dataResponse.value!.data
 
                 default:
+                    print("xxx")
+                    print(dataResponse.error?.initialError)
+                    print(dataResponse.error?.backendError)
+                    print("xxx")
                     self.showAlert = true
                     self.message = "Oops, something went wrong. Please try again later."
                 }
