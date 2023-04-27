@@ -10,7 +10,7 @@ import SwiftUI
 struct TabbarUIView: View {
     
     @State private var tabSelection = 0
-    
+
     var body: some View {
 
         NavigationView {
@@ -37,7 +37,7 @@ struct TabbarUIView: View {
                            Text("Favorites")
                        }
                            .tag(2)
-                       
+
                        InfoPage()
                            .tabItem {
                            Image(systemName: "info.circle.fill")

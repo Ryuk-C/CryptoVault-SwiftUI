@@ -16,6 +16,7 @@ struct NewsPage: View {
     @State private var tabBar: UITabBar! = nil
 
     @State private var goDetail: Bool = false
+    @State private var id: String = ""
     @State private var newsUrl: String = ""
     @State private var newsSource: String? = ""
     @State private var newsTitle: String? = ""
@@ -82,7 +83,8 @@ struct NewsPage: View {
 
                 }
 
-                NavigationLink(destination: NewsDetailsPage(url: newsUrl, source: newsSource ?? "News", title: newsTitle ?? "", urlToImage: newsImageUrl ?? "", publishedAt: newsPublishedAt ?? "")
+                NavigationLink(destination: NewsDetailsPage(id: id, url: newsUrl, source: newsSource ?? "News", title: newsTitle ?? "", urlToImage: newsImageUrl ?? "", publishedAt: newsPublishedAt ?? "")
+
                         .onAppear { self.tabBar.isHidden = true }
                         .navigationBarTitle("", displayMode: .inline)
                     , isActive: $goDetail) {
@@ -90,7 +92,9 @@ struct NewsPage: View {
 
                 }
 
-            }.onAppear {
+            }
+            
+            .onAppear {
                 viewModel.fetchNewsList(language: Languages.EN)
 
                 if(tabBar != nil) {

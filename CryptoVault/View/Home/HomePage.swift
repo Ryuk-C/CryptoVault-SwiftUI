@@ -17,6 +17,7 @@ struct HomePage: View {
     @State var filterBottomSheet: Bool = false
 
     @ObservedObject var viewModel = HomeViewModel()
+    @ObservedObject var newsViewModel = NewsDetailsViewModel()
 
     var body: some View {
 
@@ -104,6 +105,7 @@ struct HomePage: View {
             }
                 .onAppear {
                 viewModel.fetchCryptoList(currency: Currencies.USD)
+                    //newsViewModel.fetchNewsData()
             }
                 .alert(viewModel.message, isPresented: $viewModel.showAlert) {
                 Button("OK", role: .cancel) { }
@@ -137,7 +139,7 @@ struct HomePage: View {
 struct CryptoListView: View {
 
     var name = "Bitcoin"
-    var symbol = ""
+    var symbol = "BTC"
     var image = ""
     var price = "27.345"
     var priceChange = "0.58"
@@ -147,7 +149,7 @@ struct CryptoListView: View {
 
             KFImage(URL(string: image))
                 .resizable()
-                .cornerRadius(10, corners: [.topLeft, .topRight])
+                .cornerRadius(10, corners: [.topLeft, .topRight, .bottomLeft, .bottomRight])
                 .clipped()
                 .frame(width: 40, height: 40)
                 .padding(.vertical, 10)

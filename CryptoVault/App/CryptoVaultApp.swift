@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct CryptoVaultApp: App {
+    
     var body: some Scene {
         WindowGroup {
             SplashPage()
