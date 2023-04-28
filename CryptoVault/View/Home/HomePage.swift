@@ -60,7 +60,7 @@ struct HomePage: View {
 
                     if viewModel.success == "OK" {
 
-                        ScrollView {
+                        RefreshableScrollView {
 
                             LazyVStack {
 
@@ -78,6 +78,10 @@ struct HomePage: View {
                                 }
                             }
                                 .padding(.bottom, 10)
+                        } onRefresh: {
+                            
+                            viewModel.fetchCryptoList(currency: Currencies.USD)
+                            
                         }
                     }
 
@@ -205,6 +209,7 @@ struct CryptoListView: View {
 
     }
 }
+    
 
 
 

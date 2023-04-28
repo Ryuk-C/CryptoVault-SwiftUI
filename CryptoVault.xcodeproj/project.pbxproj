@@ -31,6 +31,11 @@
 		2B0A2B6029F93870001DCB0F /* coingecko.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2B0A2B5F29F93870001DCB0F /* coingecko.cer */; };
 		2B0A2B6229F938AC001DCB0F /* Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0A2B6129F938AC001DCB0F /* Certificates.swift */; };
 		2B0A2B6929F95039001DCB0F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0A2B6829F95039001DCB0F /* NetworkManager.swift */; };
+		2B1E450F29FBDCF100021C47 /* FavoriteTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E450E29FBDCF100021C47 /* FavoriteTabs.swift */; };
+		2B1E451329FBDF0C00021C47 /* SavedNewsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E451229FBDF0C00021C47 /* SavedNewsPage.swift */; };
+		2B1E451529FBDF1C00021C47 /* SavedCryptoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E451429FBDF1C00021C47 /* SavedCryptoPage.swift */; };
+		2B1E451729FBDFAF00021C47 /* SavedCryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E451629FBDFAF00021C47 /* SavedCryptoViewModel.swift */; };
+		2B1E451929FBDFBD00021C47 /* SavedNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E451829FBDFBD00021C47 /* SavedNewsViewModel.swift */; };
 		2B20B54D29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B20B54B29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodeld */; };
 		2B3B789929F73FC900FB3AEB /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789829F73FC900FB3AEB /* NewsModel.swift */; };
 		2B3B789B29F741C800FB3AEB /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789A29F741C800FB3AEB /* NewsViewModel.swift */; };
@@ -96,6 +101,11 @@
 		2B0A2B5F29F93870001DCB0F /* coingecko.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = coingecko.cer; sourceTree = "<group>"; };
 		2B0A2B6129F938AC001DCB0F /* Certificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificates.swift; sourceTree = "<group>"; };
 		2B0A2B6829F95039001DCB0F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2B1E450E29FBDCF100021C47 /* FavoriteTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTabs.swift; sourceTree = "<group>"; };
+		2B1E451229FBDF0C00021C47 /* SavedNewsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNewsPage.swift; sourceTree = "<group>"; };
+		2B1E451429FBDF1C00021C47 /* SavedCryptoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCryptoPage.swift; sourceTree = "<group>"; };
+		2B1E451629FBDFAF00021C47 /* SavedCryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCryptoViewModel.swift; sourceTree = "<group>"; };
+		2B1E451829FBDFBD00021C47 /* SavedNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNewsViewModel.swift; sourceTree = "<group>"; };
 		2B20B54C29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CryptoVaultDatabase.xcdatamodel; sourceTree = "<group>"; };
 		2B3B789829F73FC900FB3AEB /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		2B3B789A29F741C800FB3AEB /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
@@ -315,8 +325,11 @@
 		2B041DDC29F31B6C005127C7 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				2B1E451129FBDEFC00021C47 /* SavedNews */,
+				2B1E451029FBDEF100021C47 /* SavedCrypto */,
 				2B041DE429F31CFD005127C7 /* FavoritesPage.swift */,
 				2B716CF529F9CFD100E45DBC /* FavoritesViewModel.swift */,
+				2B1E450E29FBDCF100021C47 /* FavoriteTabs.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -335,6 +348,24 @@
 				2B0A2B5F29F93870001DCB0F /* coingecko.cer */,
 			);
 			path = Certificates;
+			sourceTree = "<group>";
+		};
+		2B1E451029FBDEF100021C47 /* SavedCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				2B1E451429FBDF1C00021C47 /* SavedCryptoPage.swift */,
+				2B1E451629FBDFAF00021C47 /* SavedCryptoViewModel.swift */,
+			);
+			path = SavedCrypto;
+			sourceTree = "<group>";
+		};
+		2B1E451129FBDEFC00021C47 /* SavedNews */ = {
+			isa = PBXGroup;
+			children = (
+				2B1E451229FBDF0C00021C47 /* SavedNewsPage.swift */,
+				2B1E451829FBDFBD00021C47 /* SavedNewsViewModel.swift */,
+			);
+			path = SavedNews;
 			sourceTree = "<group>";
 		};
 		2B3B78A229F76FD600FB3AEB /* list */ = {
@@ -540,9 +571,12 @@
 				2B3B78A129F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift in Sources */,
 				2B3B789D29F7529800FB3AEB /* Languages.swift in Sources */,
 				2B20B54D29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodeld in Sources */,
+				2B1E451929FBDFBD00021C47 /* SavedNewsViewModel.swift in Sources */,
+				2B1E451529FBDF1C00021C47 /* SavedCryptoPage.swift in Sources */,
 				2B041DDF29F31BB2005127C7 /* TabbarUIView.swift in Sources */,
 				2B0A2B6229F938AC001DCB0F /* Certificates.swift in Sources */,
 				2B3B78A729F7700D00FB3AEB /* NewsDetailsViewModel.swift in Sources */,
+				2B1E450F29FBDCF100021C47 /* FavoriteTabs.swift in Sources */,
 				2B041DE529F31CFD005127C7 /* FavoritesPage.swift in Sources */,
 				2B716CF829F9D86A00E45DBC /* NewsCoreDataModel.swift in Sources */,
 				2BB4D65429F580DC00BD1FCF /* Currencies.swift in Sources */,
@@ -553,6 +587,8 @@
 				2B041DC429F31159005127C7 /* NetworkErrorModel.swift in Sources */,
 				2B3B789929F73FC900FB3AEB /* NewsModel.swift in Sources */,
 				2BB4D65229F57EEC00BD1FCF /* CryptoMarketModel.swift in Sources */,
+				2B1E451329FBDF0C00021C47 /* SavedNewsPage.swift in Sources */,
+				2B1E451729FBDFAF00021C47 /* SavedCryptoViewModel.swift in Sources */,
 				2B0A2B6929F95039001DCB0F /* NetworkManager.swift in Sources */,
 				2BB4D65629F5828700BD1FCF /* HomeViewModel.swift in Sources */,
 				2B716CF329F9CCE200E45DBC /* CoreDataManager.swift in Sources */,
