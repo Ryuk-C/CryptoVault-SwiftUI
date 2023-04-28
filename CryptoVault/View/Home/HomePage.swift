@@ -204,6 +204,7 @@ struct CryptoListView: View {
     }
 
 }
+    
 
 
 
