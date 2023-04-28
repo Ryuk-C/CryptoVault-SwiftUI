@@ -1,7 +1,16 @@
-# CryptoVault-SwiftUI
+## CryptoVault App 💰
+CryptoVault shows you the current crypto market price and the news about crypto currencies.
 
-### Contents of the elements in the list
+## Tech stack 🏗
+* [SwiftUI](https://developer.apple.com/xcode/swiftui/)
+* [MVVM Architecture](https://developer.android.com/jetpack/guide) - Modern, maintainable, testaable architecture
+* [Alamofire](https://github.com/Alamofire/Alamofire)
+* [Combine](https://developer.apple.com/documentation/combine)
+* [Core Data](https://developer.apple.com/documentation/coredata)
+* [Kingfisher](https://github.com/onevcat/Kingfisher)
+* [Lottie](https://github.com/airbnb/lottie-ios)
 
+## Screenshots 📷
 <img src="zero.png" width="200"> &emsp;<img src="one.png" width="200"> &emsp;<img src="two.png" width="200">&emsp;<img src="three.png" width="200"> &emsp;<img src="four.png" width="200">
 
 
