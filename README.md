@@ -2,7 +2,7 @@
 
 ### Contents of the elements in the list
 
-<img src="zero.png" width="200"> &emsp;<img src="one.png" width="200"> &emsp;<img src="two.png" width="200">
+<img src="zero.png" width="200"> &emsp;<img src="one.png" width="200"> &emsp;<img src="two.png" width="200">&emsp;<img src="three.png" width="200"> &emsp;<img src="four.png" width="200">
 
 
 
