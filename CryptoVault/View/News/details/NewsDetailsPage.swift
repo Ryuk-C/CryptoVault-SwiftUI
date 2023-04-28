@@ -81,9 +81,10 @@ struct NewsDetailsPage: View {
                                             Button(action: {
                                                 
                                                 let activityController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-
-                                                UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
-
+                                                                                                    
+                                                    UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
+                                                    
+                                          
                                             }) {
                                                     HStack(spacing: 0) {
                                                         Image(systemName: "square.and.arrow.up")

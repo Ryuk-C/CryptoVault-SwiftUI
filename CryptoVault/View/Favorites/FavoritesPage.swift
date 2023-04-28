@@ -68,7 +68,9 @@ struct FavoritesPage: View {
             }
                 .navigationBarBackButtonHidden(true)
 
-        }
+        }.navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitle("")
     }
 
 }

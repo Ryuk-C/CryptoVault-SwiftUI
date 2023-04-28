@@ -28,7 +28,7 @@ class NewsDetailsViewModel : ObservableObject {
     }
     
     func toggleFavButton() {
-        if self.favButtonImageName == "star" {
+        if self.favButtonImageName == "bookmark" {
             favButtonImageName = "bookmark.fill"
         } else {
             favButtonImageName = "bookmark"

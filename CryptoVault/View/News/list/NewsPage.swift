@@ -37,7 +37,7 @@ struct NewsPage: View {
 
                     if viewModel.success == 100 {
 
-                        ScrollView {
+                        RefreshableScrollView {
 
                             WaterfallGrid(viewModel.newsList, id: \.url) { news in
 
@@ -59,6 +59,10 @@ struct NewsPage: View {
                                 .padding([.top, .bottom], 15)
                                 .padding([.trailing, .leading], 5)
 
+                        } onRefresh: {
+                            
+                            viewModel.fetchNewsList(language: Languages.EN)
+                            
                         }
 
                     }
