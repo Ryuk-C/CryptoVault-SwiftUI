@@ -2,6 +2,8 @@
 
 ### Contents of the elements in the list
 
+<img src="0.png" width="200"> &emsp;<img src="1.png" width="200"> &emsp;<img src="2.png" width="200">
+
 <img src="0.png" width="200" /> <img src="1.png" width="200" /> <img src="2.png" width="200" />
 <img src="3.png" width="200" /> <img src="4.png" width="200" />
 
