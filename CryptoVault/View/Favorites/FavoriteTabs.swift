@@ -17,7 +17,7 @@ struct Tabs: View {
     var geoWidth: CGFloat
     @Binding var selectedTab: Int
     var body: some View {
-        
+
         ScrollView(.horizontal, showsIndicators: false) {
             ScrollViewReader { proxy in
                 VStack(spacing: 0) {

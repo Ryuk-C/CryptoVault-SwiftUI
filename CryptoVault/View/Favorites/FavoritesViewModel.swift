@@ -8,6 +8,4 @@
 import Foundation
 
 final class FavoriteViewModel: ObservableObject {
-    
-
 }

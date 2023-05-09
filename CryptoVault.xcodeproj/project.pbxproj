@@ -413,6 +413,7 @@
 				2B041D8329F30AA2005127C7 /* Sources */,
 				2B041D8429F30AA2005127C7 /* Frameworks */,
 				2B041D8529F30AA2005127C7 /* Resources */,
+				2B7669A92A0AEF1000726200 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -544,6 +545,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B7669A92A0AEF1000726200 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2B041D8329F30AA2005127C7 /* Sources */ = {
@@ -743,7 +764,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptoVault/Preview Content\"";
-				DEVELOPMENT_TEAM = LQB7GA7MP9;
+				DEVELOPMENT_TEAM = J77597ZZ4K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CryptoVault/App/Info.plist;
@@ -759,7 +780,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.haznedar.CryptoVault-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haznedar.CryptoVaultSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -778,7 +799,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptoVault/Preview Content\"";
-				DEVELOPMENT_TEAM = LQB7GA7MP9;
+				DEVELOPMENT_TEAM = J77597ZZ4K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CryptoVault/App/Info.plist;
@@ -794,7 +815,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.haznedar.CryptoVault-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haznedar.CryptoVaultSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

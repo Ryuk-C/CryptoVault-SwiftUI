@@ -5,16 +5,16 @@
 //  Created by Cuma Haznedar on 24/04/2023.
 //
 
-import SwiftUI
 import Combine
 import CoreData
+import SwiftUI
 import UIKit
 
-class NewsDetailsViewModel : ObservableObject {
+class NewsDetailsViewModel: ObservableObject {
     
     @Published var savedNewsData: [NewsDatabase] = []
-    var added: Bool = false
-    var removed: Bool = false
+    var added = false
+    var removed = false
     @Published internal var favButtonImageName = "bookmark"
 
     func addNews(news: NewsCoreDataModel?) {
@@ -35,7 +35,7 @@ class NewsDetailsViewModel : ObservableObject {
         }
     }
     
-    func setFavButtonImage(news: NewsCoreDataModel?)  {
+    func setFavButtonImage(news: NewsCoreDataModel?) {
         if let news, CoreDataManager.shared.isAlreadyFavorited(news: news) {
             self.favButtonImageName = "bookmark.fill"
             self.added = true
@@ -44,5 +44,4 @@ class NewsDetailsViewModel : ObservableObject {
             self.added = false
         }
     }
-    
 }

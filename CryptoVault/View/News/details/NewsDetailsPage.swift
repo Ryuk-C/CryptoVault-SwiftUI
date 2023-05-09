@@ -37,14 +37,13 @@ struct NewsDetailsPage: View {
                         .rounded))
                     .foregroundColor(Color.white)
                     .padding(.leading, 5)
-
             }
         }
     }
 
     var body: some View {
 
-        NavigationView() {
+        NavigationView {
 
             VStack(spacing: 0) {
 
@@ -56,7 +55,6 @@ struct NewsDetailsPage: View {
                             .frame(alignment: .top)
 
                         Spacer()
-
                     }
 
                     Color.white
@@ -80,11 +78,11 @@ struct NewsDetailsPage: View {
 
                                     Button(action: {
 
-                                        let activityController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+                                        let activityController = UIActivityViewController(activityItems: [url],
+                                            applicationActivities: nil)
 
-                                        UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
-
-
+                                        UIApplication.shared.windows.first?.rootViewController!
+                                            .present(activityController, animated: true, completion: nil)
                                     }) {
                                         HStack(spacing: 0) {
                                             Image(systemName: "square.and.arrow.up")
@@ -96,11 +94,11 @@ struct NewsDetailsPage: View {
 
                                     Button(action: {
 
-                                        let values = NewsCoreDataModel(id: id, newsUrl: url, title: title, imageUrl: urlToImage, source: source, date: publishedAt)
+                                        let values = NewsCoreDataModel(id: id, newsUrl: url, title: title,
+                                            imageUrl: urlToImage, source: source, date: publishedAt)
 
                                         viewModel.addNews(news: values)
                                         viewModel.toggleFavButton()
-
                                     }) {
                                         HStack(spacing: 0) {
                                             Image(systemName: viewModel.favButtonImageName)
@@ -109,28 +107,22 @@ struct NewsDetailsPage: View {
                                                 .foregroundColor(.black)
                                         }
                                     }
-
                                 }
                                     .padding(.trailing, 25)
-
                             }
-
-
                         }
 
                         , alignment: .bottom
                     )
                         .padding(.bottom, 55)
-
                 }
-
             }
                 .onAppear {
 
-                let values = NewsCoreDataModel(id: id, newsUrl: url, title: title, imageUrl: urlToImage, source: source, date: publishedAt)
+                let values = NewsCoreDataModel(id: id, newsUrl: url, title: title,
+                    imageUrl: urlToImage, source: source, date: publishedAt)
 
                 viewModel.setFavButtonImage(news: values)
-
             }
                 .frame(width: screenWidth, height: screenHeight)
                 .navigationBarTitleDisplayMode(.inline)
@@ -139,7 +131,6 @@ struct NewsDetailsPage: View {
                 .onBackSwipe {
 
                 presentationMode.wrappedValue.dismiss()
-
             }
                 .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -151,22 +142,19 @@ struct NewsDetailsPage: View {
                     }
                 }
             }
-
-
-
         }
             .colorScheme(.light)
-            .navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
-
     }
-
-
 }
 
 struct NewsDetailsPage_Previews: PreviewProvider {
     static var previews: some View {
-        NewsDetailsPage(id: "", url: "https://onmyway133.com/posts/how-to-make-bottom-sheet-in-swiftui/", source: "Binance", title: "", urlToImage: "", publishedAt: "")
+        NewsDetailsPage(id: "",
+            url: "https://onmyway133.com/posts/how-to-make-bottom-sheet-in-swiftui/",
+            source: "Binance", title: "", urlToImage: "", publishedAt: "")
     }
 }
