@@ -5,8 +5,8 @@
 //  Created by Cuma Haznedar on 26/04/2023.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
 struct Certificates {
     

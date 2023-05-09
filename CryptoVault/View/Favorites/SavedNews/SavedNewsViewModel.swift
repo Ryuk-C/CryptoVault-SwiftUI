@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SavedNewsViewModel : ObservableObject {
+class SavedNewsViewModel: ObservableObject {
     
     @Published internal var favNews: [NewsDatabase] = []
     
@@ -18,5 +18,4 @@ class SavedNewsViewModel : ObservableObject {
     func deleteNews(indexSet: IndexSet) {
        CoreDataManager.shared.deleteFavorite(indexSet: indexSet)
     }
-    
 }

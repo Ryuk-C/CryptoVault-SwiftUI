@@ -5,8 +5,8 @@
 //  Created by Cuma Haznedar on 21/04/2023.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 import WaterfallGrid
 
 struct NewsPage: View {
@@ -15,7 +15,7 @@ struct NewsPage: View {
     @State private var screenHeight: Double = UIScreen.main.bounds.height
     @State private var tabBar: UITabBar! = nil
 
-    @State private var goDetail: Bool = false
+    @State private var goDetail = false
     @State private var id: String = ""
     @State private var newsUrl: String = ""
     @State private var newsSource: String? = ""
@@ -41,7 +41,8 @@ struct NewsPage: View {
 
                             WaterfallGrid(viewModel.newsList, id: \.url) { news in
 
-                                NewsCardVerticalView(title: news.title, imageUrl: news.imageurl, source: news.sourceInfo.name, dateOfNews: String(news.publishedOn))
+                                NewsCardVerticalView(title: news.title, imageUrl: news.imageurl,
+                                    source: news.sourceInfo.name, dateOfNews: String(news.publishedOn))
                                     .onTapGesture {
 
                                     id = news.id
@@ -52,60 +53,52 @@ struct NewsPage: View {
                                     newsPublishedAt = String(news.publishedOn)
 
                                     goDetail.toggle()
-
                                 }
-
                             }
                                 .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
                                 .padding([.top, .bottom], 15)
                                 .padding([.trailing, .leading], 5)
-
                         } onRefresh: {
-                            
-                            viewModel.fetchNewsList(language: Languages.EN)
-                            
-                        }
 
+                            viewModel.fetchNewsList(language: Languages.EN)
+                        }
                     }
 
                     if viewModel.loading {
 
                         ScrollView {
 
-                            WaterfallGrid((1...15).reversed(), id: \.self) { news in
+                            WaterfallGrid((1...15).reversed(), id: \.self) { _ in
 
-                                NewsCardVerticalView(title: "They have not explained how members of the public got hold of the suspects.", imageUrl: "news.imageurl", source: "BBC News", dateOfNews: "12.09.2023")
+                                NewsCardVerticalView(
+                                    title: "They have not explained how members of the pblic got hold of the suspects.",
+                                    imageUrl: "news.imageurl", source: "BBC News", dateOfNews: "12.09.2023")
                             }
                                 .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
                                 .padding([.top, .bottom], 15)
                                 .padding([.trailing, .leading], 5)
                                 .redactShimmer(condition: viewModel.loading)
-
                         }
-
                     }
-
-
                 }
 
-                NavigationLink(destination: NewsDetailsPage(id: id, url: newsUrl, source: newsSource ?? "News", title: newsTitle ?? "", urlToImage: newsImageUrl ?? "", publishedAt: newsPublishedAt ?? "")
+                NavigationLink(
+                    destination: NewsDetailsPage(id: id, url: newsUrl,
+                        source: newsSource ?? "News", title: newsTitle ?? "",
+                        urlToImage: newsImageUrl ?? "", publishedAt: newsPublishedAt ?? ""
+                    )
 
                         .onAppear { self.tabBar.isHidden = true }
                         .navigationBarTitle("", displayMode: .inline)
                     , isActive: $goDetail) {
-
-
                 }
-
             }
-            
-            .onAppear {
+
+                .onAppear {
                 viewModel.fetchNewsList(language: Languages.EN)
 
-                if(tabBar != nil) {
-                    self.tabBar.isHidden = false
-                }
-
+                guard let tabBar = tabBar else { return }
+                tabBar.isHidden = false
             }
                 .alert(viewModel.message, isPresented: $viewModel.showAlert) {
                 Button("OK", role: .cancel) { }
@@ -121,7 +114,6 @@ struct NewsPage: View {
                 }
             }
                 .navigationBarBackButtonHidden(true)
-
         }
             .colorScheme(.light)
             .navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
@@ -131,11 +123,11 @@ struct NewsPage: View {
 
             UINavigationBarAppearance()
                 .setColor(title: .white, background: .mainColor)
-
         }
             .background(TabBarAccessor { tabbar in // << here !!
-                        self.tabBar = tabbar
-                    })
+            self.tabBar = tabbar
+        }
+        )
     }
 }
 
@@ -182,7 +174,6 @@ struct NewsCardVerticalView: View {
                 .multilineTextAlignment(.leading)
                 .padding([.top, .bottom], 12)
                 .padding([.leading, .trailing], 5)
-
         }
             .background(
             RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.white)
@@ -192,7 +183,6 @@ struct NewsCardVerticalView: View {
                 .stroke(Color.gray.opacity(0.3), lineWidth: 0.75)
         )
     }
-
 }
 
 struct NewsPage_Previews: PreviewProvider {

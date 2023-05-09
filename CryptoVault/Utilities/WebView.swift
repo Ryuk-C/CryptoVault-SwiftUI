@@ -17,7 +17,7 @@ struct WebView: UIViewControllerRepresentable {
 
         let request = URLRequest(url: self.url, cachePolicy: .returnCacheDataElseLoad)
         webviewController.webview.load(request)
-        webviewController.webview.configuration.preferences.javaScriptCanOpenWindowsAutomatically = false // to disable popup alerts
+        webviewController.webview.configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
         return webviewController
     }
 
@@ -29,9 +29,7 @@ struct WebView: UIViewControllerRepresentable {
     func updateUIView(_ webView: WKWebView, context: Context) {
         let request = URLRequest(url: url)
         webView.load(request)
-
     }
-
 }
 
 public class WebViewCoordinator: NSObject {
@@ -48,30 +46,24 @@ extension WebViewCoordinator: WKNavigationDelegate {
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 
         _ = webView.url?.absoluteString
-
     }
 
     public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-
     }
 
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-
     }
 
     public func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-
     }
 
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-
-
     }
 }
 
 class WebviewController: UIViewController, WKNavigationDelegate {
-    lazy var webview: WKWebView = WKWebView()
-    lazy var progressbar: UIProgressView = UIProgressView()
+    lazy var webview = WKWebView()
+    lazy var progressbar = UIProgressView()
 
     deinit {
         self.webview.removeObserver(self, forKeyPath: "estimatedProgress")
@@ -86,16 +78,18 @@ class WebviewController: UIViewController, WKNavigationDelegate {
 
         self.webview.frame = self.view.frame
         self.webview.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addConstraints([
-            self.webview.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.webview.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.webview.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.webview.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            ])
+        self.view.addConstraints(
+            [
+                self.webview.topAnchor.constraint(equalTo: self.view.topAnchor),
+                self.webview.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+                self.webview.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+                self.webview.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            ]
+        )
 
         self.progressbar.trackTintColor = UIColor.gray.withAlphaComponent(0.55)
         self.progressbar.tintColor = .orange
-        
+
         self.webview.addSubview(self.progressbar)
         self.setProgressBarPosition()
 
@@ -108,21 +102,30 @@ class WebviewController: UIViewController, WKNavigationDelegate {
     func setProgressBarPosition() {
         self.progressbar.translatesAutoresizingMaskIntoConstraints = false
         self.webview.removeConstraints(self.webview.constraints)
-        self.webview.addConstraints([
-            self.progressbar.topAnchor.constraint(equalTo: self.webview.topAnchor, constant: self.webview.scrollView.contentOffset.y * -1),
-            self.progressbar.leadingAnchor.constraint(equalTo: self.webview.leadingAnchor),
-            self.progressbar.trailingAnchor.constraint(equalTo: self.webview.trailingAnchor),
-            ])
+        self.webview.addConstraints(
+            [
+                self.progressbar.topAnchor.constraint(
+                    equalTo: self.webview.topAnchor, constant: self.webview.scrollView.contentOffset.y * -1
+                ),
+                self.progressbar.leadingAnchor.constraint(equalTo: self.webview.leadingAnchor),
+                self.progressbar.trailingAnchor.constraint(equalTo: self.webview.trailingAnchor)
+            ]
+        )
     }
 
     // MARK: - Web view progress
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+    override func observeValue(
+        forKeyPath keyPath: String?,
+        of object: Any?,
+        change: [NSKeyValueChangeKey: Any]?,
+        context: UnsafeMutableRawPointer?
+    ) {
         switch keyPath {
         case "estimatedProgress":
             if self.webview.estimatedProgress >= 1.0 {
                 UIView.animate(withDuration: 0.3, animations: { () in
                     self.progressbar.alpha = 0.0
-                }, completion: { finished in
+                }, completion: { _ in
                         self.progressbar.setProgress(0.0, animated: false)
                     })
             } else {

@@ -13,7 +13,6 @@ extension UIColor {
     class var mainColor: UIColor {
         return UIColor(named: "maincolor")!
     }
-    
 }
 
 extension View {
@@ -32,6 +31,10 @@ extension View {
             })
         )
     }
+    
+    public func redactShimmer(condition: Bool) -> some View {
+      modifier(RedactAndShimmerViewModifier(condition: condition))
+    }
 }
 
 struct RoundedCorner: Shape {
@@ -40,7 +43,9 @@ struct RoundedCorner: Shape {
     var corners: UIRectCorner = .allCorners
 
     func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let path = UIBezierPath(
+            roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)
+        )
         return Path(path.cgPath)
     }
 }
@@ -59,9 +64,7 @@ extension UINavigationBarAppearance {
         backgroundColor = background
         UINavigationBar.appearance().scrollEdgeAppearance = self
         UINavigationBar.appearance().standardAppearance = self
-
     }
-
 }
 
 struct TabBarAccessor: UIViewControllerRepresentable {
@@ -74,7 +77,8 @@ struct TabBarAccessor: UIViewControllerRepresentable {
         return proxyController
     }
     
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<TabBarAccessor>) {
+    func updateUIViewController(_ uiViewController: UIViewController,
+                                context: UIViewControllerRepresentableContext<TabBarAccessor>) {
     }
     
     typealias UIViewControllerType = UIViewController
@@ -106,14 +110,14 @@ struct BlurView: View {
     @State var blurValue: Double = 10
     @State var opacity: Double = 0
     
-    init(text:String, startTime: Double) {
+    init(text: String, startTime: Double) {
         characters = Array(text)
         baseTime = startTime
     }
     
     var body: some View {
         
-        HStack(spacing: 1){
+        HStack(spacing: 1) {
             ForEach(0..<characters.count) { num in
                 Text(String(self.characters[num]))
                     .font(Font.custom("Library3amsoft", size: 30))
@@ -124,12 +128,12 @@ struct BlurView: View {
                                value: blurValue)
             }
         }
-        .onAppear{
+        .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + baseTime) {
-                if blurValue == 0{
+                if blurValue == 0 {
                     blurValue = 10
                     opacity = 0.01
-                }else {
+                } else {
                     blurValue = 0
                     opacity = 1
                 }
@@ -161,8 +165,7 @@ public struct RefreshableScrollView<Content: View>: View {
     }
 }
 
-
-public enum Model : String {
+public enum Model: String {
 
     case simulator     = "simulator",
 
@@ -233,7 +236,7 @@ public extension UIDevice {
             }
         }
 
-        let modelMap : [String: Model] = [
+        let modelMap: [String: Model] = [
             "i386"      : .simulator,
             "x86_64"    : .simulator,
 

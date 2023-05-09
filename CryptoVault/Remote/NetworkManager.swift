@@ -5,8 +5,8 @@
 //  Created by Cuma Haznedar on 26/04/2023.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
 class CryptoPinning {
 
@@ -19,7 +19,6 @@ class CryptoPinning {
         ]
 
         Manager = Session(serverTrustManager: ServerTrustManager(evaluators: trustEvaluator))
-
     }
 }
 

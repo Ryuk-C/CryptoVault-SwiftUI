@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashPage: View {
 
-    @State private var tabbar = false
+    @State private var navigateToHome = false
 
     var body: some View {
 
@@ -18,7 +18,7 @@ struct SplashPage: View {
             ZStack {
 
                 VStack {
-                    
+
                     Spacer()
 
                     Image("splash")
@@ -29,33 +29,26 @@ struct SplashPage: View {
                     Spacer()
 
                     BlurView(text: "HAZNEDAR", startTime: 0.0)
-
                 }
 
-                NavigationLink(destination: TabbarUIView()
-                    , isActive: $tabbar) {
-
+                NavigationLink(destination: TabbarUIView(),
+                    isActive: $navigateToHome) {
                 }
-
             }
                 .onAppear {
 
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.15) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.15) {
 
-                    tabbar = true
-
+                    navigateToHome = true
                 }
-
             }
                 .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
-
-        }.navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
+        }.navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
-
     }
-
 }
 
 struct SplashPage_Previews: PreviewProvider {

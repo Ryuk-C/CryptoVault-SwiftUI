@@ -5,9 +5,8 @@
 //  Created by Cuma Haznedar on 21/04/2023.
 //
 
-
-import SwiftUI
 import Lottie
+import SwiftUI
 
 struct LottieView: UIViewRepresentable {
 
@@ -41,6 +40,5 @@ struct LottieView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UIViewType, context: Context) {
-
     }
 }

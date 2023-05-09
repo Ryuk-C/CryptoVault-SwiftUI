@@ -26,26 +26,17 @@ struct InfoPage: View {
                                     .font(.system(size: 15, weight: .medium, design: .rounded))
 
                                 Spacer()
-                                    .onTapGesture {
 
-                                    withAnimation {
-
-
-                                    }
-
-                                }
                                 Image(systemName: "chevron.forward")
                                     .foregroundColor(.blue)
                                     .frame(
                                     alignment: .leading
                                 )
                             }
-
                         }
                             .onTapGesture {
 
                             UIApplication.shared.open(URL(string: "https://github.com/Ryuk-C")!)
-
                         }
 
                         HStack {
@@ -56,27 +47,18 @@ struct InfoPage: View {
                                     .font(.system(size: 15, weight: .medium, design: .rounded))
 
                                 Spacer()
-                                    .onTapGesture {
 
-                                    withAnimation {
-
-
-                                    }
-
-                                }
                                 Image(systemName: "chevron.forward")
                                     .foregroundColor(.blue)
                                     .frame(
                                     alignment: .leading
                                 )
                             }
-
                         }
                             .onTapGesture {
 
                             UIApplication.shared.open(URL(string: "https://www.linkedin.com/in/cumahaznedar/")!)
                         }
-
 
                         HStack {
 
@@ -84,14 +66,7 @@ struct InfoPage: View {
                                 .font(.system(size: 15, weight: .medium, design: .rounded))
 
                             Spacer()
-                                .onTapGesture {
 
-                                withAnimation {
-
-
-                                }
-
-                            }
                             Image(systemName: "chevron.forward")
                                 .foregroundColor(.blue)
                                 .frame(
@@ -102,11 +77,9 @@ struct InfoPage: View {
 
                             openMailApp(toEmail: "cumahaznedar@gmail.com", subject: "CryptoVault", body: "")
                         }
-
                     } header: {
                         Text("Contact")
                             .textCase(nil)
-
                     }
 
                     Section {
@@ -119,21 +92,13 @@ struct InfoPage: View {
                                     .font(.system(size: 15, weight: .medium, design: .rounded))
 
                                 Spacer()
-                                    .onTapGesture {
 
-                                    withAnimation {
-
-
-                                    }
-
-                                }
                                 Image(systemName: "chevron.forward")
                                     .foregroundColor(.blue)
                                     .frame(
                                     alignment: .leading
                                 )
                             }
-
                         }
 
                         HStack {
@@ -142,29 +107,17 @@ struct InfoPage: View {
                                 .font(.system(size: 15, weight: .medium, design: .rounded))
 
                             Spacer()
-                                .onTapGesture {
 
-                                withAnimation {
-
-
-                                }
-
-                            }
                             Image(systemName: "chevron.forward")
                                 .foregroundColor(.blue)
                                 .frame(
                                 alignment: .leading
                             )
                         }
-
-
-
                     } header: {
                         Text("Privacy")
                             .textCase(nil)
-
                     }
-
 
                     Section {
 
@@ -176,21 +129,13 @@ struct InfoPage: View {
                                     .font(.system(size: 15, weight: .medium, design: .rounded))
 
                                 Spacer()
-                                    .onTapGesture {
 
-                                    withAnimation {
-
-
-                                    }
-
-                                }
                                 Image(systemName: "chevron.forward")
                                     .foregroundColor(.blue)
                                     .frame(
                                     alignment: .leading
                                 )
                             }
-
                         }
 
                         HStack {
@@ -212,20 +157,15 @@ struct InfoPage: View {
 
                             Spacer()
 
-
                             Text("v\(Bundle.main.releaseVersionNumber ?? "-")")
                                 .font(.system(size: 15, weight: .medium, design: .rounded))
                                 .foregroundColor(.gray.opacity(0.75))
                         }
-
                     } header: {
                         Text("System")
                             .textCase(nil)
-
                     }
-
                 }
-                
             }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -238,20 +178,17 @@ struct InfoPage: View {
                 }
             }
                 .navigationBarBackButtonHidden(true)
-
-
         }
             .colorScheme(.light)
-            .navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
             .onAppear {
 
             UINavigationBarAppearance()
                 .setColor(title: .white, background: .mainColor)
-
         }
-
     }
 
     func openMailApp(toEmail: String, subject: String, body: String) {
@@ -268,7 +205,6 @@ struct InfoPage: View {
 
         UIApplication.shared.open(url)
     }
-
 }
 
 struct InfoPage_Previews: PreviewProvider {

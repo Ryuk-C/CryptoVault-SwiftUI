@@ -5,16 +5,19 @@
 //  Created by Cuma Haznedar on 21/04/2023.
 //
 
-import Foundation
 import Alamofire
 import Combine
+import Foundation
 
 protocol ServiceProtocol {
 
-    func fetchCryptoMarketList(currency: Currencies) -> AnyPublisher<DataResponse<CryptoMarketList, NetworkError>, Never>
+    func fetchCryptoMarketList(
+        currency: Currencies
+    ) -> AnyPublisher<DataResponse<CryptoMarketList, NetworkError>, Never>
 
-    func fetchLastNews(language: Languages) -> AnyPublisher<DataResponse<NewsModel, NetworkError>, Never>
-
+    func fetchLastNews(
+        language: Languages
+    ) -> AnyPublisher<DataResponse<NewsModel, NetworkError>, Never>
 }
 
 class Service {
@@ -22,7 +25,6 @@ class Service {
     static let shared = Service()
 
     private init() { }
-
 }
 
 extension Service: ServiceProtocol {
@@ -32,7 +34,7 @@ extension Service: ServiceProtocol {
         let url = URL(string: Constants.BASE_URL)!
 
         let parameters: Parameters = [
-            "vs_currency": currency,
+            "vs_currency": currency
         ]
         
         let session = CryptoNetworkManager.getManager()
@@ -52,7 +54,6 @@ extension Service: ServiceProtocol {
         }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
-
     }
 
     func fetchLastNews(language: Languages) -> AnyPublisher<Alamofire.DataResponse<NewsModel, NetworkError>, Never> {
@@ -78,7 +79,5 @@ extension Service: ServiceProtocol {
         }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
-
     }
-
 }

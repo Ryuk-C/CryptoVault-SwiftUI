@@ -5,8 +5,8 @@
 //  Created by Cuma Haznedar on 21/04/2023.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct HomePage: View {
 
@@ -14,7 +14,7 @@ struct HomePage: View {
     @State private var screenHeight: Double = UIScreen.main.bounds.height
 
     @State var searchCryptoCurrency = ""
-    @State var filterBottomSheet: Bool = false
+    @State var filterBottomSheet = false
 
     @ObservedObject var viewModel = HomeViewModel()
     @ObservedObject var newsViewModel = NewsDetailsViewModel()
@@ -41,7 +41,6 @@ struct HomePage: View {
                         }
                             .padding()
                             .cornerRadius(10)
-
                     }
                         .background(
                         RoundedRectangle(cornerRadius: 10)
@@ -66,22 +65,22 @@ struct HomePage: View {
 
                                 ForEach(viewModel.cryptoList.filter { crypto in /// filter
 
-                                    searchCryptoCurrency.isEmpty || crypto.name.localizedStandardContains(searchCryptoCurrency) ||
+                                    searchCryptoCurrency.isEmpty ||
+                                        crypto.name.localizedStandardContains(searchCryptoCurrency) ||
                                         crypto.symbol.localizedStandardContains(searchCryptoCurrency)
                                 }, id: \.id
                                 ) { list in
 
                                     CryptoListView(name: list.name, symbol: list.symbol.uppercased(),
-                                        image: list.image, price: String(list.currentPrice), priceChange: String(list.priceChangePercentage24H)
+                                        image: list.image, price: String(list.currentPrice),
+                                                   priceChange: String(list.priceChangePercentage24H)
                                     )
-
                                 }
                             }
                                 .padding(.bottom, 10)
                         } onRefresh: {
-                            
+
                             viewModel.fetchCryptoList(currency: Currencies.USD)
-                            
                         }
                     }
 
@@ -91,29 +90,25 @@ struct HomePage: View {
 
                             LazyVStack {
 
-                                ForEach((1...15).reversed(), id: \.self) { list in
+                                ForEach((1...15).reversed(), id: \.self) { _ in
 
                                     CryptoListView(name: "Terra Luna Classic", symbol: "LUNA",
                                         image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579", price: "2.974,25", priceChange: "0.49%"
                                     )
                                         .redactShimmer(condition: viewModel.loading)
-
                                 }
                             }
                                 .padding(.bottom, 10)
                         }
                     }
-
                 }
-
             }
                 .onAppear {
                 viewModel.fetchCryptoList(currency: Currencies.USD)
-                    //newsViewModel.fetchNewsData()
-            }
+        }
                 .alert(viewModel.message, isPresented: $viewModel.showAlert) {
                 Button("OK", role: .cancel) { }
-            }
+    }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -125,17 +120,16 @@ struct HomePage: View {
                 }
             }
                 .navigationBarBackButtonHidden(true)
-
         }
             .colorScheme(.light)
-            .navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
             .onAppear {
 
             UINavigationBarAppearance()
                 .setColor(title: .white, background: .mainColor)
-
         }
     }
 }
@@ -168,7 +162,6 @@ struct CryptoListView: View {
                 Text(symbol)
                     .font(.system(size: 14, weight: .semibold, design: .monospaced))
                     .foregroundColor(.black.opacity(0.6))
-
             }.padding(.leading, 5)
 
             Spacer()
@@ -184,19 +177,14 @@ struct CryptoListView: View {
                         .font(.system(size: 13, weight: .semibold, design: .rounded))
                         .foregroundColor(.red)
                         .padding(.top, 2)
-
                 } else {
 
                     Text(priceChange + "%")
                         .font(.system(size: 13, weight: .semibold, design: .rounded))
                         .foregroundColor(.green)
                         .padding(.top, 2)
-
                 }
-
-
             }.padding(.trailing, 10)
-
         }.background(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(.gray.opacity(0.60), lineWidth: 0.75)
@@ -204,13 +192,8 @@ struct CryptoListView: View {
                 .cornerRadius(10)
         )
             .padding([.horizontal], 10)
-
     }
-
 }
-    
-
-
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {

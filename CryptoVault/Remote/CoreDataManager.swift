@@ -43,7 +43,6 @@ final class CoreDataManager {
         save()
     }
     
-    
     func deleteFavorite(indexSet: IndexSet) {
         guard let index = indexSet.first else { return }
         if let favs = fetchFavorites() {

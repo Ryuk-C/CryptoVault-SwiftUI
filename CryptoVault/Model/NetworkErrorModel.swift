@@ -5,8 +5,8 @@
 //  Created by Cuma Haznedar on 21/04/2023.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
 struct NetworkError: Error {
   let initialError: AFError

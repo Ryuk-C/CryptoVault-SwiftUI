@@ -5,9 +5,9 @@
 //  Created by Cuma Haznedar on 21/04/2023.
 //
 
+import Kingfisher
 import SwiftUI
 import WaterfallGrid
-import Kingfisher
 
 struct FavoritesPage: View {
 
@@ -48,11 +48,8 @@ struct FavoritesPage: View {
                                             .tag(1)
                                     })
                                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-
                             }
-
                         }
-
                     }
                 }
             }
@@ -67,12 +64,11 @@ struct FavoritesPage: View {
                 }
             }
                 .navigationBarBackButtonHidden(true)
-
-        }.navigationViewStyle(StackNavigationViewStyle()) .navigationBarHidden(true)
+        }.navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
     }
-
 }
 
 struct FavoritesPage_Previews: PreviewProvider {

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Foundation
 
 public struct RedactAndShimmerViewModifier: ViewModifier {
   private let condition: Bool
@@ -23,12 +22,5 @@ public struct RedactAndShimmerViewModifier: ViewModifier {
     } else {
      content
     }
-  }
-}
-
-
-extension View {
-  public func redactShimmer(condition: Bool) -> some View {
-    modifier(RedactAndShimmerViewModifier(condition: condition))
   }
 }

@@ -5,47 +5,41 @@
 //  Created by Cuma Haznedar on 28/04/2023.
 //
 
+import Kingfisher
 import SwiftUI
 import WaterfallGrid
-import Kingfisher
 
 struct SavedNewsPage: View {
-    
+
     @StateObject private var viewModel = SavedNewsViewModel()
 
     var body: some View {
-        
-        
+
         VStack {
-            
+
             if viewModel.favNews.isEmpty {
 
                 LottieView(lottieFile: "anim_empty", speed: 1, play: true, loop: false)
                     .padding(.horizontal, 25)
-
             } else {
 
                 ScrollView {
 
                     WaterfallGrid(viewModel.favNews, id: \.self) { news in
 
-                        FavNewsCardView(title: news.title ?? "", imageUrl: news.imageUrl ?? "", source: news.source ?? "", dateOfNews: news.date ?? "")
-
+                        FavNewsCardView(title: news.title ?? "", imageUrl: news.imageUrl ?? "",
+                            source: news.source ?? "", dateOfNews: news.date ?? "")
                     }
                         .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
                         .padding([.top, .bottom], 15)
                         .padding([.trailing, .leading], 5)
-
                 }
-
             }
-            
-        }.onAppear{
-            
-            viewModel.getFavNews()
-            
         }
-        
+        .onAppear {
+
+            viewModel.getFavNews()
+        }
     }
 }
 
@@ -92,7 +86,6 @@ struct FavNewsCardView: View {
                 .multilineTextAlignment(.leading)
                 .padding([.top, .bottom], 12)
                 .padding([.leading, .trailing], 5)
-
         }
             .background(
             RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.white)
@@ -102,9 +95,7 @@ struct FavNewsCardView: View {
                 .stroke(Color.gray.opacity(0.3), lineWidth: 0.75)
         )
     }
-
 }
-
 
 struct SavedNewsPage_Previews: PreviewProvider {
     static var previews: some View {
