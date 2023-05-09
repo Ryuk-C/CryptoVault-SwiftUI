@@ -18,10 +18,10 @@ class NewsDetailsViewModel : ObservableObject {
     @Published internal var favButtonImageName = "bookmark"
 
     func addNews(news: NewsCoreDataModel?) {
-        if let news, !CoreDataManager.shared.isAlreadyFavorited(game: news) {
+        if let news, !CoreDataManager.shared.isAlreadyFavorited(news: news) {
             CoreDataManager.shared.addFavorite(newNews: news)
         } else {
-            if let index = CoreDataManager.shared.fetchFavorites()?.firstIndex(where: { $0.newsUrl == news?.newsUrl }) {
+            if let index = CoreDataManager.shared.fetchFavorites()?.firstIndex(where: { $0.id == news?.id}) {
                 CoreDataManager.shared.deleteFavorite(indexSet: .init(integer: index))
             }
         }
@@ -36,19 +36,13 @@ class NewsDetailsViewModel : ObservableObject {
     }
     
     func setFavButtonImage(news: NewsCoreDataModel?)  {
-        if let news, CoreDataManager.shared.isAlreadyFavorited(game: news) {
+        if let news, CoreDataManager.shared.isAlreadyFavorited(news: news) {
             self.favButtonImageName = "bookmark.fill"
+            self.added = true
         } else {
             self.favButtonImageName = "bookmark"
+            self.added = false
         }
     }
-}
-
-
-struct FriendValues {
-  let id: String
-  let title: String
-  let imageUrl: String
-  let source: String
-  let date: String
+    
 }

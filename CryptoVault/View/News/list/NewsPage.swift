@@ -44,6 +44,7 @@ struct NewsPage: View {
                                 NewsCardVerticalView(title: news.title, imageUrl: news.imageurl, source: news.sourceInfo.name, dateOfNews: String(news.publishedOn))
                                     .onTapGesture {
 
+                                    id = news.id
                                     newsUrl = news.url
                                     newsSource = news.sourceInfo.name
                                     newsTitle = news.title
