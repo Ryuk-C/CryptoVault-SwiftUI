@@ -219,7 +219,7 @@ public enum Model : String {
 
     AppleTV            = "Apple TV",
     AppleTV_4K         = "Apple TV 4K",
-    unrecognized       = "?unrecognized?"
+    unrecognized       = "Simulator"
 }
 
 public extension UIDevice {

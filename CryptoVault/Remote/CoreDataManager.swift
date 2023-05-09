@@ -52,8 +52,8 @@ final class CoreDataManager {
         }
     }
     
-    func isAlreadyFavorited(game: NewsCoreDataModel) -> Bool {
-        if fetchFavorites()?.contains(where: { $0.newsUrl == game.newsUrl }) == true {
+    func isAlreadyFavorited(news: NewsCoreDataModel) -> Bool {
+        if fetchFavorites()?.contains(where: { $0.id == news.id }) == true {
             return true
         } else {
             return false
