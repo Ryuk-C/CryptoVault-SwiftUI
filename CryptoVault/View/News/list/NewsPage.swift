@@ -13,6 +13,7 @@ struct NewsPage: View {
 
     @State private var screenWidth: Double = UIScreen.main.bounds.width
     @State private var screenHeight: Double = UIScreen.main.bounds.height
+
     @State private var tabBar: UITabBar! = nil
 
     @State private var goDetail = false

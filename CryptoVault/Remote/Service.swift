@@ -22,6 +22,11 @@ protocol ServiceProtocol {
     func fetchCryptoDetail(
         id: String
     ) -> AnyPublisher<DataResponse<CryptoDetailModel, NetworkError>, Never>
+
+    func fetchCustomCryptoMarketList(
+        ids: [String],
+        currency: Currencies
+    ) -> AnyPublisher<DataResponse<CustomCryptoMarketModel, NetworkError>, Never>
 }
 
 class Service {
@@ -51,7 +56,6 @@ extension Service: ServiceProtocol {
             .publishDecodable(type: CryptoMarketList.self)
             .map { response in
             response.mapError { error in
-                print(response)
                 let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0) }
                 return NetworkError(initialError: error, backendError: backendError)
             }
@@ -98,7 +102,6 @@ extension Service: ServiceProtocol {
             .publishDecodable(type: CryptoDetailModel.self)
             .map { response in
             response.mapError { error in
-                print(response)
                 let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0) }
                 return NetworkError(initialError: error, backendError: backendError)
             }
@@ -106,4 +109,32 @@ extension Service: ServiceProtocol {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
+
+    func fetchCustomCryptoMarketList(ids: [String], currency: Currencies) -> AnyPublisher<Alamofire.DataResponse<CustomCryptoMarketModel, NetworkError>, Never> {
+
+        let url = URL(string: Constants.BASE_URL)!
+
+        let parameters: Parameters = [
+            "ids": ids,
+            "vs_currency": currency
+        ]
+
+        let session = CryptoNetworkManager.getManager()
+
+        return session.request(url,
+            method: .get,
+            parameters: parameters
+        )
+            .validate()
+            .publishDecodable(type: CustomCryptoMarketModel.self)
+            .map { response in
+            response.mapError { error in
+                let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0) }
+                return NetworkError(initialError: error, backendError: backendError)
+            }
+        }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
 }

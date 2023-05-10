@@ -14,6 +14,7 @@ struct FavoritesPage: View {
     @State private var screenWidth: Double = UIScreen.main.bounds.width
     @State private var screenHeight: Double = UIScreen.main.bounds.height
     @State private var selectedTab: Int = 0
+    @State private var tabBar: UITabBar! = nil
 
     let tabs: [Tab] = [
             .init(icon: Image(systemName: "bitcoinsign.circle.fill"), title: "Crypto"),
@@ -44,7 +45,7 @@ struct FavoritesPage: View {
                                     content: {
                                         SavedCryptoPage()
                                             .tag(0)
-                                        SavedNewsPage()
+                                        SavedNewsPage(tabBar: tabBar)
                                             .tag(1)
                                     })
                                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -64,10 +65,18 @@ struct FavoritesPage: View {
                 }
             }
                 .navigationBarBackButtonHidden(true)
+                .onAppear {
+                guard let tabBar = tabBar else { return }
+                tabBar.isHidden = false
+            }
         }.navigationViewStyle(StackNavigationViewStyle())
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
+            .background(TabBarAccessor { tabbar in // << here !!
+                self.tabBar = tabbar
+           }
+           )
     }
 }
 

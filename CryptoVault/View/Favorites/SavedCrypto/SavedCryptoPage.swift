@@ -8,8 +8,31 @@
 import SwiftUI
 
 struct SavedCryptoPage: View {
+
+    @StateObject private var viewModel = SavedCryptoViewModel()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+
+            if viewModel.favCrypto.isEmpty {
+
+                LottieView(lottieFile: "anim_empty", speed: 1, play: true, loop: false)
+                    .padding(.horizontal, 25)
+
+            } else {
+
+                ScrollView {
+
+
+
+                }
+            }
+        }
+        .onAppear {
+
+            viewModel.getFavNews()
+        }
     }
 }
 
