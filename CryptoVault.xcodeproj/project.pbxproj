@@ -57,6 +57,7 @@
 		2BB4D65429F580DC00BD1FCF /* Currencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4D65329F580DC00BD1FCF /* Currencies.swift */; };
 		2BB4D65629F5828700BD1FCF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4D65529F5828700BD1FCF /* HomeViewModel.swift */; };
 		2BE215192A0C106C0073C734 /* CryptoCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE215182A0C106C0073C734 /* CryptoCoreDataModel.swift */; };
+		2BE2151B2A0C19810073C734 /* CustomCryptoMarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2151A2A0C19810073C734 /* CustomCryptoMarketModel.swift */; };
 		2BF049422A0BE9D900A462CC /* CryptoDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF049412A0BE9D900A462CC /* CryptoDetailPage.swift */; };
 		2BF049442A0BE9EB00A462CC /* CryptoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF049432A0BE9EB00A462CC /* CryptoDetailViewModel.swift */; };
 		2BF049462A0BEE7700A462CC /* CryptoDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF049452A0BEE7700A462CC /* CryptoDetailModel.swift */; };
@@ -130,6 +131,7 @@
 		2BB4D65329F580DC00BD1FCF /* Currencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
 		2BB4D65529F5828700BD1FCF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2BE215182A0C106C0073C734 /* CryptoCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCoreDataModel.swift; sourceTree = "<group>"; };
+		2BE2151A2A0C19810073C734 /* CustomCryptoMarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCryptoMarketModel.swift; sourceTree = "<group>"; };
 		2BF049412A0BE9D900A462CC /* CryptoDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailPage.swift; sourceTree = "<group>"; };
 		2BF049432A0BE9EB00A462CC /* CryptoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailViewModel.swift; sourceTree = "<group>"; };
 		2BF049452A0BEE7700A462CC /* CryptoDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailModel.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				2B716CF729F9D86A00E45DBC /* NewsCoreDataModel.swift */,
 				2BF049452A0BEE7700A462CC /* CryptoDetailModel.swift */,
 				2BE215182A0C106C0073C734 /* CryptoCoreDataModel.swift */,
+				2BE2151A2A0C19810073C734 /* CustomCryptoMarketModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				2B041DC629F31190005127C7 /* Service.swift in Sources */,
 				2B041DCC29F312CF005127C7 /* LottieView.swift in Sources */,
 				2B041DE329F31CF0005127C7 /* NewsPage.swift in Sources */,
+				2BE2151B2A0C19810073C734 /* CustomCryptoMarketModel.swift in Sources */,
 				2B041DE729F31D08005127C7 /* InfoPage.swift in Sources */,
 				2B3B78A129F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift in Sources */,
 				2B3B789D29F7529800FB3AEB /* Languages.swift in Sources */,

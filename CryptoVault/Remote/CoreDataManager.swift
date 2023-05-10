@@ -37,6 +37,7 @@ final class CoreDataManager {
     func addFavoriteNews(newNews: NewsCoreDataModel) {
         let news = NewsDatabase(context: container.viewContext)
         news.id = newNews.id
+        news.newsUrl = newNews.newsUrl
         news.title = newNews.title
         news.imageUrl = newNews.imageUrl
         news.source = newNews.source

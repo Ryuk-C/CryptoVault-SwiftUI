@@ -14,8 +14,4 @@ class SavedNewsViewModel: ObservableObject {
     func getFavNews() {
         self.favNews = CoreDataManager.shared.fetchFavoriteNews() ?? []
     }
-    
-    func deleteNews(indexSet: IndexSet) {
-       CoreDataManager.shared.deleteFavoriteNews(indexSet: indexSet)
-    }
 }

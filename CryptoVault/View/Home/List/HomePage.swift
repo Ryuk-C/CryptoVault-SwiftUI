@@ -81,7 +81,6 @@ struct HomePage: View {
                                         priceChange: String(list.priceChangePercentage24H)
                                     ).onTapGesture {
 
-                                        print("clicked")
                                         selectedCryptoId = list.id
                                         selectedCryptoName = list.name
                                         selectedCryptoPrice = String(list.currentPrice)

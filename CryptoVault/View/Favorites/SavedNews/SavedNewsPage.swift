@@ -13,6 +13,16 @@ struct SavedNewsPage: View {
 
     @StateObject private var viewModel = SavedNewsViewModel()
 
+    var tabBar: UITabBar! = nil
+
+    @State private var goDetail = false
+    @State private var id: String = ""
+    @State private var newsUrl: String = ""
+    @State private var newsSource: String = ""
+    @State private var newsTitle: String = ""
+    @State private var newsImageUrl: String = ""
+    @State private var newsPublishedAt: String = ""
+
     var body: some View {
 
         VStack {
@@ -29,16 +39,43 @@ struct SavedNewsPage: View {
 
                         FavNewsCardView(title: news.title ?? "", imageUrl: news.imageUrl ?? "",
                             source: news.source ?? "", dateOfNews: news.date ?? "")
+                            .onTapGesture {
+
+                            id = news.id ?? ""
+                            newsUrl = news.newsUrl ?? "www.google.com"
+                            newsSource = news.source!
+                            newsTitle = news.title!
+                            newsImageUrl = news.imageUrl ?? ""
+                            newsPublishedAt = news.date!
+
+                            goDetail.toggle()
+
+                        }
                     }
                         .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
                         .padding([.top, .bottom], 15)
                         .padding([.trailing, .leading], 5)
                 }
             }
+
+            NavigationLink(
+                destination: NewsDetailsPage(id: id, url: newsUrl,
+                    source: newsSource ?? "News", title: newsTitle ?? "",
+                    urlToImage: newsImageUrl ?? "", publishedAt: newsPublishedAt ?? ""
+                )
+
+                    .onAppear { self.tabBar.isHidden = true }
+                    .navigationBarTitle("", displayMode: .inline)
+                , isActive: $goDetail) {
+            }
         }
-        .onAppear {
+            .onAppear {
 
             viewModel.getFavNews()
+
+            guard let tabBar = tabBar else { return }
+            tabBar.isHidden = false
+
         }
     }
 }
