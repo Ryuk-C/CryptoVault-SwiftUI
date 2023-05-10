@@ -18,6 +18,10 @@ protocol ServiceProtocol {
     func fetchLastNews(
         language: Languages
     ) -> AnyPublisher<DataResponse<NewsModel, NetworkError>, Never>
+
+    func fetchCryptoDetail(
+        id: String
+    ) -> AnyPublisher<DataResponse<CryptoDetailModel, NetworkError>, Never>
 }
 
 class Service {
@@ -36,9 +40,9 @@ extension Service: ServiceProtocol {
         let parameters: Parameters = [
             "vs_currency": currency
         ]
-        
+
         let session = CryptoNetworkManager.getManager()
-        
+
         return session.request(url,
             method: .get,
             parameters: parameters
@@ -64,7 +68,7 @@ extension Service: ServiceProtocol {
             "Apikey": Constants.NEWS_API_KEY,
             "lang": language
         ]
-        
+
         return AF.request(url,
             method: .get,
             parameters: parameters
@@ -73,6 +77,28 @@ extension Service: ServiceProtocol {
             .publishDecodable(type: NewsModel.self)
             .map { response in
             response.mapError { error in
+                let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0) }
+                return NetworkError(initialError: error, backendError: backendError)
+            }
+        }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
+    func fetchCryptoDetail(id: String) -> AnyPublisher<Alamofire.DataResponse<CryptoDetailModel, NetworkError>, Never> {
+
+        let url = URL(string: Constants.DETAILS_BASE_URL+id)!
+
+        let session = CryptoNetworkManager.getManager()
+
+        return session.request(url,
+            method: .get
+        )
+            .validate()
+            .publishDecodable(type: CryptoDetailModel.self)
+            .map { response in
+            response.mapError { error in
+                print(response)
                 let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0) }
                 return NetworkError(initialError: error, backendError: backendError)
             }

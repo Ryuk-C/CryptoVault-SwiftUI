@@ -14,7 +14,12 @@ struct HomePage: View {
     @State private var screenHeight: Double = UIScreen.main.bounds.height
 
     @State var searchCryptoCurrency = ""
+    @State var selectedCryptoId = ""
+    @State var selectedCryptoName = ""
+    @State private var navigateToDetail = false
     @State var filterBottomSheet = false
+
+    @State private var tabBar: UITabBar! = nil
 
     @ObservedObject var viewModel = HomeViewModel()
     @ObservedObject var newsViewModel = NewsDetailsViewModel()
@@ -74,7 +79,13 @@ struct HomePage: View {
                                     CryptoListView(name: list.name, symbol: list.symbol.uppercased(),
                                         image: list.image, price: String(list.currentPrice),
                                                    priceChange: String(list.priceChangePercentage24H)
-                                    )
+                                    ).onTapGesture {
+
+                                        print("clicked")
+                                        selectedCryptoId = list.id
+                                        selectedCryptoName = list.name
+                                        navigateToDetail.toggle()
+                                    }
                                 }
                             }
                                 .padding(.bottom, 10)
@@ -101,11 +112,28 @@ struct HomePage: View {
                                 .padding(.bottom, 10)
                         }
                     }
+
                 }
-            }
-                .onAppear {
+
+                NavigationLink(
+                    destination: CryptoDetailPage(id: selectedCryptoId, name: selectedCryptoName)
+
+                        .onAppear { self.tabBar.isHidden = true }
+                        .navigationBarTitle("", displayMode: .inline)
+                    , isActive: $navigateToDetail) {
+                }
+
+                }
+            .onAppear {
+
                 viewModel.fetchCryptoList(currency: Currencies.USD)
-        }
+
+                guard let tabBar = tabBar else { return }
+                tabBar.isHidden = false
+    }
+
+            }
+
                 .alert(viewModel.message, isPresented: $viewModel.showAlert) {
                 Button("OK", role: .cancel) { }
     }
@@ -115,13 +143,12 @@ struct HomePage: View {
                     HStack {
                         Text("Home")
                             .font(.system(size: 20, weight: .heavy, design: .rounded))
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color.red)
                     }
                 }
             }
                 .navigationBarBackButtonHidden(true)
-        }
-            .colorScheme(.light)
+
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
@@ -131,6 +158,12 @@ struct HomePage: View {
             UINavigationBarAppearance()
                 .setColor(title: .white, background: .mainColor)
         }
+            .background(
+                TabBarAccessor
+                { tabbar in // << here !!
+            self.tabBar = tabbar
+        }
+        )
     }
 }
 
