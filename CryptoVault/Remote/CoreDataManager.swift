@@ -26,13 +26,15 @@ final class CoreDataManager {
     func save() {
         try? container.viewContext.save()
     }
-    
-    func fetchFavorites() -> [NewsDatabase]? {
+
+
+    // MARK: - Favorite News
+    func fetchFavoriteNews() -> [NewsDatabase]? {
         let request = NSFetchRequest<NewsDatabase>(entityName: "NewsDatabase")
         return try? container.viewContext.fetch(request)
     }
     
-    func addFavorite(newNews: NewsCoreDataModel) {
+    func addFavoriteNews(newNews: NewsCoreDataModel) {
         let news = NewsDatabase(context: container.viewContext)
         news.id = newNews.id
         news.title = newNews.title
@@ -43,16 +45,47 @@ final class CoreDataManager {
         save()
     }
     
-    func deleteFavorite(indexSet: IndexSet) {
+    func deleteFavoriteNews(indexSet: IndexSet) {
         guard let index = indexSet.first else { return }
-        if let favs = fetchFavorites() {
+        if let favs = fetchFavoriteNews() {
             container.viewContext.delete(favs[index])
             save()
         }
     }
     
-    func isAlreadyFavorited(news: NewsCoreDataModel) -> Bool {
-        if fetchFavorites()?.contains(where: { $0.id == news.id }) == true {
+    func isAlreadyFavoritedNews(news: NewsCoreDataModel) -> Bool {
+        if fetchFavoriteNews()?.contains(where: { $0.id == news.id }) == true {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    // MARK: - Favorite Crypto
+    func fetchFavoriteCrypto() -> [CryptoDatabase]? {
+        let request = NSFetchRequest<CryptoDatabase>(entityName: "CryptoDatabase")
+        return try? container.viewContext.fetch(request)
+    }
+
+    func addFavoriteCrypto(newCrypto: CryptoCoreDataModel) {
+        let crypto = CryptoDatabase(context: container.viewContext)
+        crypto.id = newCrypto.id
+        crypto.name = newCrypto.name
+        crypto.price = newCrypto.price
+
+        save()
+    }
+
+    func deleteFavoriteCrypto(indexSet: IndexSet) {
+        guard let index = indexSet.first else { return }
+        if let favs = fetchFavoriteCrypto() {
+            container.viewContext.delete(favs[index])
+            save()
+        }
+    }
+
+    func isAlreadyFavoritedCrypto(crypto: CryptoCoreDataModel) -> Bool {
+        if fetchFavoriteCrypto()?.contains(where: { $0.name == crypto.name }) == true {
             return true
         } else {
             return false

@@ -71,7 +71,6 @@ struct ReposURL: Codable {
 // MARK: - MarketData
 struct MarketData: Codable {
     let currentPrice: [String: Double]?
-    let totalValueLocked, mcapToTvlRatio, fdvToTvlRatio: String?
     let ath, athChangePercentage: [String: Double]?
     let athDate: [String: String]?
     let atl, atlChangePercentage: [String: Double]?
@@ -81,7 +80,6 @@ struct MarketData: Codable {
     let fullyDilutedValuation, totalVolume, high24H, low24H: [String: Double]?
     let priceChange24H, priceChangePercentage24H, priceChangePercentage7D, priceChangePercentage14D: Double?
     let priceChangePercentage30D, priceChangePercentage60D, priceChangePercentage200D, priceChangePercentage1Y: Double?
-    let marketCapChange24H: Int?
     let marketCapChangePercentage24H: Double?
     let priceChange24HInCurrency, priceChangePercentage1HInCurrency, priceChangePercentage24HInCurrency, priceChangePercentage7DInCurrency: [String: Double]?
     let priceChangePercentage14DInCurrency, priceChangePercentage30DInCurrency, priceChangePercentage60DInCurrency, priceChangePercentage200DInCurrency: [String: Double]?
@@ -90,9 +88,6 @@ struct MarketData: Codable {
 
     enum CodingKeys: String, CodingKey {
         case currentPrice = "current_price"
-        case totalValueLocked = "total_value_locked"
-        case mcapToTvlRatio = "mcap_to_tvl_ratio"
-        case fdvToTvlRatio = "fdv_to_tvl_ratio"
         case ath
         case athChangePercentage = "ath_change_percentage"
         case athDate = "ath_date"
@@ -113,7 +108,6 @@ struct MarketData: Codable {
         case priceChangePercentage60D = "price_change_percentage_60d"
         case priceChangePercentage200D = "price_change_percentage_200d"
         case priceChangePercentage1Y = "price_change_percentage_1y"
-        case marketCapChange24H = "market_cap_change_24h"
         case marketCapChangePercentage24H = "market_cap_change_percentage_24h"
         case priceChange24HInCurrency = "price_change_24h_in_currency"
         case priceChangePercentage1HInCurrency = "price_change_percentage_1h_in_currency"

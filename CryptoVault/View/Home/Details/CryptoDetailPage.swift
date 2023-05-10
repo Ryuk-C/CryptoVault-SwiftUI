@@ -11,6 +11,7 @@ struct CryptoDetailPage: View {
 
     var id = ""
     var name = ""
+    var price = ""
     @State private var screenWidth: Double = UIScreen.main.bounds.width
     @State private var screenHeight: Double = UIScreen.main.bounds.height
 
@@ -36,6 +37,23 @@ struct CryptoDetailPage: View {
         }
     }
 
+    var favoriteButton: some View { Button(action: {
+
+        let values = CryptoCoreDataModel(id: id, name: name , price: price)
+
+        viewModel.addCrypto(crypto: values)
+        viewModel.toggleFavButton()
+        
+
+    }) {
+            HStack(spacing: 0) {
+                Image(systemName: viewModel.favButtonImageName)
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(.white)
+            }
+        }
+    }
+
     var body: some View {
 
         NavigationView{
@@ -48,11 +66,17 @@ struct CryptoDetailPage: View {
             .onAppear {
 
                 viewModel.fetchCryptoList(id: id)
+
+                let values = CryptoCoreDataModel(id: id, name: name, price: price)
+
+                viewModel.setFavButtonImage(crypto: values)
+        }
+            .alert(viewModel.message, isPresented: $viewModel.showAlert) {
+            Button("OK", role: .cancel) { }
         }
             .frame(width: screenWidth, height: screenHeight)
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(leading: backButton)
-
+            .navigationBarItems(leading: backButton, trailing: favoriteButton)
             .onBackSwipe {
 
             presentationMode.wrappedValue.dismiss()
