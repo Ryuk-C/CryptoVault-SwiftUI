@@ -9,14 +9,19 @@ CryptoVault shows you the current crypto market price and the news about crypto 
 * [Core Data](https://developer.apple.com/documentation/coredata)
 * [Kingfisher](https://github.com/onevcat/Kingfisher)
 * [Lottie](https://github.com/airbnb/lottie-ios)
-* [Rest API](https://github.com/airbnb/lottie-ios)
-
-
+* [Rest API](https://www.coingecko.com/en/api)
+  * [CoinGecko](https://www.coingecko.com/en/api)) - Crypto Currencies API
+  * [CryptoCompare](https://min-api.cryptocompare.com)) - News API
 
 ## Screenshots 📷
 <img src="Media/homepage.png" width="200" /> <img src="Media/news.png" width="200" /> <img src="Media/favorıte.png" width="200" /> <img src="Media/info.png" width="200" />
 
+## Detail Screen Screenshots 📷
+<img src="Media/cryptodetaıl.png" width="200" /> <img src="Media/newsdatail.png" width="200" />
 
+## App Video
+----------
+https://github.com/Ryuk-C/CryptoVault-SwiftUI/assets/78587220/f8f2c6da-3e71-474b-a7c4-5b00650dcf82
 
 
 ## License  ℹ️
