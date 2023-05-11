@@ -32,7 +32,7 @@ class CryptoDetailViewModel: ObservableObject {
             CoreDataManager.shared.addFavoriteCrypto(newCrypto: crypto)
             cryptoSaved.toggle()
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
 
                 self.cryptoSaved.toggle()
             }

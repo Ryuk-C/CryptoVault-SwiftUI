@@ -57,6 +57,7 @@
 		2BD762112A0C5F22002D3E0A /* Shimmer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD762102A0C5F22002D3E0A /* Shimmer+Ext.swift */; };
 		2BD762222A0C62E1002D3E0A /* anim_star.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BD762212A0C62E1002D3E0A /* anim_star.json */; };
 		2BD762242A0C63EA002D3E0A /* anim_save.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BD762232A0C63EA002D3E0A /* anim_save.json */; };
+		2BD762262A0C6EBC002D3E0A /* anim_empty_crypto_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BD762252A0C6EBC002D3E0A /* anim_empty_crypto_list.json */; };
 		2BE215192A0C106C0073C734 /* CryptoCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE215182A0C106C0073C734 /* CryptoCoreDataModel.swift */; };
 		2BE2151B2A0C19810073C734 /* CustomCryptoMarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2151A2A0C19810073C734 /* CustomCryptoMarketModel.swift */; };
 		2BF049422A0BE9D900A462CC /* CryptoDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF049412A0BE9D900A462CC /* CryptoDetailPage.swift */; };
@@ -132,6 +133,7 @@
 		2BD762102A0C5F22002D3E0A /* Shimmer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shimmer+Ext.swift"; sourceTree = "<group>"; };
 		2BD762212A0C62E1002D3E0A /* anim_star.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = anim_star.json; sourceTree = "<group>"; };
 		2BD762232A0C63EA002D3E0A /* anim_save.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = anim_save.json; sourceTree = "<group>"; };
+		2BD762252A0C6EBC002D3E0A /* anim_empty_crypto_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = anim_empty_crypto_list.json; sourceTree = "<group>"; };
 		2BE215182A0C106C0073C734 /* CryptoCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCoreDataModel.swift; sourceTree = "<group>"; };
 		2BE2151A2A0C19810073C734 /* CustomCryptoMarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCryptoMarketModel.swift; sourceTree = "<group>"; };
 		2BF049412A0BE9D900A462CC /* CryptoDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailPage.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		2B041DC729F3121A005127C7 /* Lotties */ = {
 			isa = PBXGroup;
 			children = (
+				2BD762252A0C6EBC002D3E0A /* anim_empty_crypto_list.json */,
 				2BD762232A0C63EA002D3E0A /* anim_save.json */,
 				2BD762212A0C62E1002D3E0A /* anim_star.json */,
 				2B716CF929F9E1B300E45DBC /* anim_empty.json */,
@@ -687,6 +690,7 @@
 				2B716CFA29F9E1B300E45DBC /* anim_empty.json in Resources */,
 				2B041DC929F3124D005127C7 /* anim_splashcrypto.json in Resources */,
 				2BD762222A0C62E1002D3E0A /* anim_star.json in Resources */,
+				2BD762262A0C6EBC002D3E0A /* anim_empty_crypto_list.json in Resources */,
 				2B041D9229F30AA4005127C7 /* Preview Assets.xcassets in Resources */,
 				2B041D8F29F30AA4005127C7 /* Assets.xcassets in Resources */,
 				2B041DD529F3165F005127C7 /* Library3amsoft.otf in Resources */,

@@ -11,9 +11,12 @@ import WaterfallGrid
 
 struct SavedNewsPage: View {
 
+    @State private var screenWidth: Double = UIScreen.main.bounds.width
+    @State private var screenHeight: Double = UIScreen.main.bounds.height
+
     @StateObject private var viewModel = SavedNewsViewModel()
 
-    var tabBar: UITabBar! = nil
+    var tabBar: UITabBar!
 
     @State private var goDetail = false
     @State private var id: String = ""
@@ -29,8 +32,14 @@ struct SavedNewsPage: View {
 
             if viewModel.favNews.isEmpty {
 
-                LottieView(lottieFile: "anim_empty", speed: 1, play: true, loop: false)
+                LottieView(lottieFile: "anim_empty_crypto_list", speed: 0.9, play: true, loop: true)
                     .padding(.horizontal, 25)
+                    .frame(height: screenHeight * 0.3)
+
+                Text("There isn't any news in your reading list.")
+                    .font(.system(size: 23, weight: .semibold, design: .rounded))
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 25)
             } else {
 
                 ScrollView {
