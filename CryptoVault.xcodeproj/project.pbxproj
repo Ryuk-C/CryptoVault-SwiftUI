@@ -197,7 +197,7 @@
 				2B91F4B529F992E800B27C0A /* CoreData */,
 				2B041DCA29F3129F005127C7 /* Utilities */,
 				2B041DC229F31142005127C7 /* Model */,
-				2B041DB529F30FBC005127C7 /* View */,
+				2B041DB529F30FBC005127C7 /* Scene */,
 				2B041DB429F30FAB005127C7 /* Remote */,
 				2B041D9029F30AA4005127C7 /* Preview Content */,
 			);
@@ -239,17 +239,17 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
-		2B041DB529F30FBC005127C7 /* View */ = {
+		2B041DB529F30FBC005127C7 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				2B041DDB29F31B64005127C7 /* News */,
 				2B041DB629F30FC4005127C7 /* Splash */,
 				2B041DD929F31B2F005127C7 /* Tabbar */,
 				2B041DDD29F31B7C005127C7 /* Info */,
 				2B041DDC29F31B6C005127C7 /* Favorites */,
-				2B041DDB29F31B64005127C7 /* News */,
 				2B041DDA29F31B5D005127C7 /* Home */,
 			);
-			path = View;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		2B041DB629F30FC4005127C7 /* Splash */ = {
