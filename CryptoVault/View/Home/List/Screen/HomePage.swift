@@ -227,7 +227,6 @@ struct CryptoListView: View {
     }
 
     }
-}
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {

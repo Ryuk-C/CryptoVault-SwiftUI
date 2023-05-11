@@ -26,7 +26,6 @@ class NewsDetailsViewModel: ObservableObject {
 
                 self.newsSaved.toggle()
             }
-
         } else {
             if let index = CoreDataManager.shared.fetchFavoriteNews()?.firstIndex(where: { $0.id == news?.id}) {
                 CoreDataManager.shared.deleteFavoriteNews(indexSet: .init(integer: index))
