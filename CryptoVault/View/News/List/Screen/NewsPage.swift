@@ -15,7 +15,6 @@ struct NewsPage: View {
     @State private var screenHeight: Double = UIScreen.main.bounds.height
 
     @State private var tabBar: UITabBar! = nil
-
     @State private var goDetail = false
     @State private var id: String = ""
     @State private var newsUrl: String = ""
@@ -89,7 +88,6 @@ struct NewsPage: View {
                         urlToImage: newsImageUrl ?? "", publishedAt: newsPublishedAt ?? ""
                     )
 
-                        .onAppear { self.tabBar.isHidden = true }
                         .navigationBarTitle("", displayMode: .inline)
                     , isActive: $goDetail) {
                 }
