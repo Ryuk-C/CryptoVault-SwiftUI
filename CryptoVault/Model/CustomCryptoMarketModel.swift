@@ -17,7 +17,6 @@ struct CustomCryptoMarketModelElement: Codable {
     let circulatingSupply, totalSupply, maxSupply, ath: Int?
     let athChangePercentage: Double?
     let athDate: String?
-    let atl, atlChangePercentage: Double?
 
     enum CodingKeys: String, CodingKey {
         case id, symbol, name, image
@@ -38,8 +37,6 @@ struct CustomCryptoMarketModelElement: Codable {
         case ath
         case athChangePercentage = "ath_change_percentage"
         case athDate = "ath_date"
-        case atl
-        case atlChangePercentage = "atl_change_percentage"
     }
 }
 

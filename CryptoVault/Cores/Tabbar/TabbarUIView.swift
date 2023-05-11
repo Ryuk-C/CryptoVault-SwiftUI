@@ -19,28 +19,28 @@ struct TabbarUIView: View {
 
                 HomePage()
                     .tabItem {
-                    SwiftUI.Image(systemName: "square.stack.3d.up.fill")
+                    Image(systemName: "square.stack.3d.up.fill")
                     Text("Home")
                     }
                     .tag(0)
 
                 NewsPage()
                     .tabItem {
-                    SwiftUI.Image(systemName: "newspaper")
+                    Image(systemName: "newspaper")
                     Text("News")
                     }
                     .tag(1)
 
                 FavoritesPage()
                     .tabItem {
-                    SwiftUI.Image(systemName: "bookmark.fill")
+                    Image(systemName: "bookmark.fill")
                     Text("Favorites")
                     }
                     .tag(2)
 
                 InfoPage()
                     .tabItem {
-                    SwiftUI.Image(systemName: "info.circle.fill")
+                    Image(systemName: "info.circle.fill")
                     Text("Info")
                     }
                     .tag(3)
