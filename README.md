@@ -10,14 +10,14 @@ CryptoVault shows you the current crypto market price and the news about crypto 
 * [Kingfisher](https://github.com/onevcat/Kingfisher)
 * [Lottie](https://github.com/airbnb/lottie-ios)
 * [Rest API](https://www.coingecko.com/en/api)
-  * [CoinGecko](https://www.coingecko.com/en/api)) - Crypto Currencies API
-  * [CryptoCompare](https://min-api.cryptocompare.com)) - News API
+  * [CoinGecko](https://www.coingecko.com/en/api) - Crypto Currencies API
+  * [CryptoCompare](https://min-api.cryptocompare.com) - News API
 
 ## Screenshots 📷
 <img src="Media/homepage.png" width="200" /> <img src="Media/news.png" width="200" /> <img src="Media/favorıte.png" width="200" /> <img src="Media/info.png" width="200" />
 
 ## Detail Screen Screenshots 📷
-<img src="Media/cryptodetaıl.png" width="200" /> <img src="Media/newsdatail.png" width="200" />
+<img src="Media/cryptodetaıl.png" width="200" /> <img src="Media/newsdetail.png" width="200" />
 
 ## App Video
 ----------
