@@ -14,7 +14,7 @@ CryptoVault shows you the current crypto market price and the news about crypto 
 
 
 ## Screenshots 📷
-<img src="Media/homepage.png" width="200" /> <img src="Media/news.png" width="200" /> <img src="Media/favorıte.png" width="200" />
+<img src="Media/homepage.png" width="200" /> <img src="Media/news.png" width="200" /> <img src="Media/favorıte.png" width="200" /> <img src="Media/info.png" width="200" />
 
 
 
