@@ -19,7 +19,6 @@ struct SavedCryptoPage: View {
 
                 LottieView(lottieFile: "anim_empty", speed: 1, play: true, loop: false)
                     .padding(.horizontal, 25)
-
             } else {
 
                 ScrollView {

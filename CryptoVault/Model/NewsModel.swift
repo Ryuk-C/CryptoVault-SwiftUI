@@ -11,7 +11,6 @@ import Foundation
 struct NewsModel: Codable {
     let type: Int
     let message: String
-    let promoted: [JSONAny]
     let data: [Datum]
     let rateLimit: RateLimit
     let hasWarning: Bool
@@ -19,7 +18,6 @@ struct NewsModel: Codable {
     enum CodingKeys: String, CodingKey {
         case type = "Type"
         case message = "Message"
-        case promoted = "Promoted"
         case data = "Data"
         case rateLimit = "RateLimit"
         case hasWarning = "HasWarning"

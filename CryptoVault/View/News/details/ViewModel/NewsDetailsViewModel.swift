@@ -13,13 +13,20 @@ import UIKit
 class NewsDetailsViewModel: ObservableObject {
     
     @Published var savedNewsData: [NewsDatabase] = []
-    var added = false
+    @Published var newsSaved = false
     var removed = false
     @Published internal var favButtonImageName = "bookmark"
 
     func addNews(news: NewsCoreDataModel?) {
         if let news, !CoreDataManager.shared.isAlreadyFavoritedNews(news: news) {
             CoreDataManager.shared.addFavoriteNews(newNews: news)
+            newsSaved.toggle()
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+
+                self.newsSaved.toggle()
+            }
+
         } else {
             if let index = CoreDataManager.shared.fetchFavoriteNews()?.firstIndex(where: { $0.id == news?.id}) {
                 CoreDataManager.shared.deleteFavoriteNews(indexSet: .init(integer: index))
@@ -38,10 +45,8 @@ class NewsDetailsViewModel: ObservableObject {
     func setFavButtonImage(news: NewsCoreDataModel?) {
         if let news, CoreDataManager.shared.isAlreadyFavoritedNews(news: news) {
             self.favButtonImageName = "bookmark.fill"
-            self.added = true
         } else {
             self.favButtonImageName = "bookmark"
-            self.added = false
         }
     }
 }

@@ -37,7 +37,7 @@ struct SplashPage: View {
             }
                 .onAppear {
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.15) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
 
                     navigateToHome = true
                 }

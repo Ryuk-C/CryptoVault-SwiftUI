@@ -31,10 +31,6 @@ extension View {
             })
         )
     }
-    
-    public func redactShimmer(condition: Bool) -> some View {
-      modifier(RedactAndShimmerViewModifier(condition: condition))
-    }
 }
 
 struct RoundedCorner: Shape {

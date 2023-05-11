@@ -49,7 +49,6 @@ struct SavedNewsPage: View {
                             newsPublishedAt = news.date!
 
                             goDetail.toggle()
-
                         }
                     }
                         .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
@@ -75,7 +74,6 @@ struct SavedNewsPage: View {
 
             guard let tabBar = tabBar else { return }
             tabBar.isHidden = false
-
         }
     }
 }

@@ -45,7 +45,7 @@ struct NewsDetailsPage: View {
 
         NavigationView {
 
-            VStack(spacing: 0) {
+            ZStack(alignment: .center) {
 
                 ZStack(alignment: .bottom) {
 
@@ -59,7 +59,7 @@ struct NewsDetailsPage: View {
 
                     Color.white
                         .ignoresSafeArea()
-                        .frame(width: screenWidth, height: screenHeight * 0.045)
+                        .frame(width: screenWidth, height: screenHeight * 0.048)
                         .overlay(
 
                         VStack {
@@ -116,6 +116,15 @@ struct NewsDetailsPage: View {
                     )
                         .padding(.bottom, 55)
                 }
+
+                if viewModel.newsSaved {
+
+                    ZStack(alignment: .center) {
+
+                        LottieView(lottieFile: "anim_save", speed: 1, play: true, loop: false)
+                            .frame(width: 225, height: 225)
+                    }
+                }
             }
                 .onAppear {
 
@@ -127,7 +136,6 @@ struct NewsDetailsPage: View {
                 .frame(width: screenWidth, height: screenHeight)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(leading: backButton)
-
                 .onBackSwipe {
 
                 presentationMode.wrappedValue.dismiss()

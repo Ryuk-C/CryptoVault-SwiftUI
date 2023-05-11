@@ -38,7 +38,9 @@ class Service {
 
 extension Service: ServiceProtocol {
 
-    func fetchCryptoMarketList(currency: Currencies) -> AnyPublisher<Alamofire.DataResponse<CryptoMarketList, NetworkError>, Never> {
+    func fetchCryptoMarketList(
+        currency: Currencies
+    ) -> AnyPublisher<Alamofire.DataResponse<CryptoMarketList, NetworkError>, Never> {
 
         let url = URL(string: Constants.BASE_URL)!
 
@@ -89,7 +91,9 @@ extension Service: ServiceProtocol {
             .eraseToAnyPublisher()
     }
 
-    func fetchCryptoDetail(id: String) -> AnyPublisher<Alamofire.DataResponse<CryptoDetailModel, NetworkError>, Never> {
+    func fetchCryptoDetail(
+        id: String
+    ) -> AnyPublisher<Alamofire.DataResponse<CryptoDetailModel, NetworkError>, Never> {
 
         let url = URL(string: Constants.DETAILS_BASE_URL+id)!
 
@@ -110,7 +114,9 @@ extension Service: ServiceProtocol {
             .eraseToAnyPublisher()
     }
 
-    func fetchCustomCryptoMarketList(ids: [String], currency: Currencies) -> AnyPublisher<Alamofire.DataResponse<CustomCryptoMarketModel, NetworkError>, Never> {
+    func fetchCustomCryptoMarketList(
+        ids: [String], currency: Currencies
+    ) -> AnyPublisher<Alamofire.DataResponse<CustomCryptoMarketModel, NetworkError>, Never> {
 
         let url = URL(string: Constants.BASE_URL)!
 
@@ -136,5 +142,4 @@ extension Service: ServiceProtocol {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
-
 }

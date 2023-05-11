@@ -43,8 +43,6 @@ struct CryptoDetailPage: View {
 
         viewModel.addCrypto(crypto: values)
         viewModel.toggleFavButton()
-        
-
     }) {
             HStack(spacing: 0) {
                 Image(systemName: viewModel.favButtonImageName)
@@ -60,7 +58,12 @@ struct CryptoDetailPage: View {
 
             VStack {
 
-                Text("Hello, World!")
+                if viewModel.cryptoSaved {
+
+                    LottieView(lottieFile: "anim_star", speed: 1.3, play: true, loop: false)
+                        .frame(width: 225, height: 225)
+
+                }
 
             }
             .onAppear {
@@ -97,7 +100,6 @@ struct CryptoDetailPage: View {
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
-
     }
 }
 

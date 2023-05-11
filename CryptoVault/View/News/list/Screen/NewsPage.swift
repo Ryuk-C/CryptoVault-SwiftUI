@@ -125,7 +125,7 @@ struct NewsPage: View {
             UINavigationBarAppearance()
                 .setColor(title: .white, background: .mainColor)
         }
-            .background(TabBarAccessor { tabbar in // << here !!
+            .background(TabBarAccessor { tabbar in
             self.tabBar = tabbar
         }
         )
