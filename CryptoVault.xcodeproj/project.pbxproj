@@ -332,8 +332,8 @@
 		2B041DDB29F31B64005127C7 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				2B3B78A229F76FD600FB3AEB /* List */,
-				2B3B78A329F76FDD00FB3AEB /* Details */,
+				2B3B78A229F76FD600FB3AEB /* list */,
+				2B3B78A329F76FDD00FB3AEB /* details */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -382,22 +382,22 @@
 			path = SavedNews;
 			sourceTree = "<group>";
 		};
-		2B3B78A229F76FD600FB3AEB /* List */ = {
+		2B3B78A229F76FD600FB3AEB /* list */ = {
 			isa = PBXGroup;
 			children = (
 				2BD7621B2A0C6077002D3E0A /* Screen */,
 				2BD7621C2A0C607E002D3E0A /* ViewModel */,
 			);
-			path = List;
+			path = list;
 			sourceTree = "<group>";
 		};
-		2B3B78A329F76FDD00FB3AEB /* Details */ = {
+		2B3B78A329F76FDD00FB3AEB /* details */ = {
 			isa = PBXGroup;
 			children = (
-				2BD7621A2A0C6068002D3E0A /* ViewModel */,
 				2BD762192A0C6063002D3E0A /* Screen */,
+				2BD7621A2A0C6068002D3E0A /* ViewModel */,
 			);
-			path = Details;
+			path = details;
 			sourceTree = "<group>";
 		};
 		2B716CF129F9CCA800E45DBC /* App */ = {

@@ -18,6 +18,7 @@ struct NewsDetailsPage: View {
 
     @State private var screenWidth: Double = UIScreen.main.bounds.width
     @State private var screenHeight: Double = UIScreen.main.bounds.height
+    @State private var tabBar: UITabBar! = nil
 
     @ObservedObject private var viewModel = NewsDetailsViewModel()
 
@@ -132,6 +133,9 @@ struct NewsDetailsPage: View {
                     imageUrl: urlToImage, source: source, date: publishedAt)
 
                 viewModel.setFavButtonImage(news: values)
+
+                guard let tabBar = tabBar else { return }
+                tabBar.isHidden = true
             }
                 .frame(width: screenWidth, height: screenHeight)
                 .navigationBarTitleDisplayMode(.inline)
@@ -156,6 +160,10 @@ struct NewsDetailsPage: View {
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
+            .background(TabBarAccessor { tabbar in
+            self.tabBar = tabbar
+        }
+        )
     }
 }
 

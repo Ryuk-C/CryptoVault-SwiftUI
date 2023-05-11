@@ -42,7 +42,7 @@ struct Tabs: View {
                                         }
                                             .frame(width: fixed ? (geoWidth / CGFloat(tabs.count)) : .none, height: 52)
                                         // Bar Indicator
-                                        Rectangle().fill(selectedTab == row ? Color.yellow : Color.clear)
+                                        Rectangle().fill(selectedTab == row ? Color.orange : Color.clear)
                                             .frame(height: 4)
                                     }.fixedSize()
                                 })

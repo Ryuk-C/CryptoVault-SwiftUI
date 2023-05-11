@@ -47,9 +47,4 @@ final class HomeViewModel: ObservableObject {
         }
             .store(in: &cancellableSet)
     }
-
-    func createAlert(with error: NetworkError) {
-        message = error.backendError == nil ? error.initialError.localizedDescription : error.backendError!.message
-        self.showAlert = true
-    }
 }

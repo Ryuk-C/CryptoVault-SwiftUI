@@ -45,7 +45,7 @@ struct FavoritesPage: View {
                                     content: {
                                         SavedCryptoPage()
                                             .tag(0)
-                                        SavedNewsPage(tabBar: tabBar)
+                                        SavedNewsPage()
                                             .tag(1)
                                     })
                                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

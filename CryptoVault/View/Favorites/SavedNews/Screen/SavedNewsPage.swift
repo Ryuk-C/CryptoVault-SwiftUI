@@ -16,8 +16,6 @@ struct SavedNewsPage: View {
 
     @StateObject private var viewModel = SavedNewsViewModel()
 
-    var tabBar: UITabBar!
-
     @State private var goDetail = false
     @State private var id: String = ""
     @State private var newsUrl: String = ""
@@ -28,61 +26,61 @@ struct SavedNewsPage: View {
 
     var body: some View {
 
-        VStack {
+        ZStack {
 
-            if viewModel.favNews.isEmpty {
+            Color("backgroundcolor").ignoresSafeArea()
 
-                LottieView(lottieFile: "anim_empty_crypto_list", speed: 0.9, play: true, loop: true)
-                    .padding(.horizontal, 25)
-                    .frame(height: screenHeight * 0.3)
+            VStack {
 
-                Text("There isn't any news in your reading list.")
-                    .font(.system(size: 23, weight: .semibold, design: .rounded))
-                    .multilineTextAlignment(.center)
-                    .padding(.top, 25)
-            } else {
+                if viewModel.favNews.isEmpty {
 
-                ScrollView {
+                    LottieView(lottieFile: "anim_empty_crypto_list", speed: 0.9, play: true, loop: true)
+                        .padding(.horizontal, 25)
+                        .frame(height: screenHeight * 0.3)
 
-                    WaterfallGrid(viewModel.favNews, id: \.self) { news in
+                    Text("There isn't any news in your reading list.")
+                        .font(.system(size: 23, weight: .semibold, design: .rounded))
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 25)
+                } else {
 
-                        FavNewsCardView(title: news.title ?? "", imageUrl: news.imageUrl ?? "",
-                            source: news.source ?? "", dateOfNews: news.date ?? "")
-                            .onTapGesture {
+                    ScrollView {
 
-                            id = news.id ?? ""
-                            newsUrl = news.newsUrl ?? "www.google.com"
-                            newsSource = news.source!
-                            newsTitle = news.title!
-                            newsImageUrl = news.imageUrl ?? ""
-                            newsPublishedAt = news.date!
+                        WaterfallGrid(viewModel.favNews, id: \.self) { news in
 
-                            goDetail.toggle()
+                            FavNewsCardView(title: news.title ?? "", imageUrl: news.imageUrl ?? "",
+                                source: news.source ?? "", dateOfNews: news.date ?? "")
+                                .onTapGesture {
+
+                                id = news.id ?? ""
+                                newsUrl = news.newsUrl ?? "www.google.com"
+                                newsSource = news.source!
+                                newsTitle = news.title!
+                                newsImageUrl = news.imageUrl ?? ""
+                                newsPublishedAt = news.date!
+
+                                goDetail.toggle()
+                            }
                         }
+                            .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
+                            .padding([.top, .bottom], 15)
+                            .padding([.trailing, .leading], 5)
                     }
-                        .gridStyle(columns: 2, spacing: 10, animation: .easeInOut(duration: 0.5))
-                        .padding([.top, .bottom], 15)
-                        .padding([.trailing, .leading], 5)
+                }
+
+                NavigationLink(
+                    destination: NewsDetailsPage(id: id, url: newsUrl,
+                        source: newsSource, title: newsTitle,
+                        urlToImage: newsImageUrl, publishedAt: newsPublishedAt
+                    )
+                        .navigationBarTitle("", displayMode: .inline)
+                    , isActive: $goDetail) {
                 }
             }
 
-            NavigationLink(
-                destination: NewsDetailsPage(id: id, url: newsUrl,
-                    source: newsSource ?? "News", title: newsTitle ?? "",
-                    urlToImage: newsImageUrl ?? "", publishedAt: newsPublishedAt ?? ""
-                )
-
-                    .onAppear { self.tabBar.isHidden = true }
-                    .navigationBarTitle("", displayMode: .inline)
-                , isActive: $goDetail) {
-            }
-        }
-            .onAppear {
+        }.onAppear {
 
             viewModel.getFavNews()
-
-            guard let tabBar = tabBar else { return }
-            tabBar.isHidden = false
         }
     }
 }
