@@ -117,8 +117,6 @@ struct HomePage: View {
 
                 NavigationLink(
                     destination: CryptoDetailPage(id: selectedCryptoId, name: selectedCryptoName, price: selectedCryptoPrice)
-
-                        .onAppear { self.tabBar.isHidden = true }
                         .navigationBarTitle("", displayMode: .inline)
                     , isActive: $navigateToDetail) {
                 }

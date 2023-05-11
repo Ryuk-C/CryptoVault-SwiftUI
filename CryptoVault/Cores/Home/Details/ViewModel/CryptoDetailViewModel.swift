@@ -8,13 +8,19 @@
 import Combine
 import Foundation
 
-class CryptoDetailViewModel: ObservableObject {
+final class CryptoDetailViewModel: ObservableObject {
 
     @Published var loading = false
     @Published var showAlert = false
     @Published var cryptoSaved = false
     @Published var message: String = ""
     @Published var success: String = ""
+    @Published var usdPrice: Double = 0.0
+    @Published var usdPriceChange: String = ""
+    @Published var eurPrice: Double = 0.0
+    @Published var eurPriceChange: String = ""
+    @Published var tryliraPrice: Double = 0.0
+    @Published var tryPriceChange: String = ""
     @Published var cryptoDetailList = [CryptoDetailModel]()
 
     @Published var savedCryptoData: [CryptoDatabase] = []
@@ -70,6 +76,49 @@ class CryptoDetailViewModel: ObservableObject {
             if dataResponse.error == nil {
 
                 self.cryptoDetailList = [dataResponse.value!]
+
+                for i in self.cryptoDetailList{
+
+                    if let usd = i.marketData?.currentPrice?["usd"] {
+
+                        self.usdPrice = usd
+
+                    }
+
+                    if let eur = i.marketData?.currentPrice?["eur"] {
+
+                        self.eurPrice = eur
+
+                    }
+
+                    if let turkishLira = i.marketData?.currentPrice?["try"] {
+
+                        self.tryliraPrice = turkishLira
+
+                    }
+
+                    if let usdChange = i.marketData?.priceChange24HInCurrency?["usd"] {
+
+                        self.usdPriceChange = String(format: "%.3f", usdChange)
+
+
+                    }
+
+                    if let eurChange = i.marketData?.priceChange24HInCurrency?["eur"] {
+
+                        self.eurPriceChange = String(format: "%.3f", eurChange)
+
+
+                    }
+
+                    if let tryChange = i.marketData?.priceChange24HInCurrency?["try"] {
+
+                        self.tryPriceChange = String(format: "%.3f", tryChange)
+
+                    }
+
+                }
+
                 self.success = "OK"
                 self.showAlert = false
                 self.loading = false

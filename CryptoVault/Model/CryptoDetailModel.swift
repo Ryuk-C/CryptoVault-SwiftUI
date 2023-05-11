@@ -15,7 +15,7 @@ struct CryptoDetailModel: Codable {
     let blockTimeInMinutes: Int?
     let categories: [String]?
     let localization, description: Tion?
-    let links: Links?
+    let links: Links
     let image: ImageList?
     let countryOrigin: String?
     let genesisDate: String?
@@ -55,7 +55,7 @@ struct ImageList: Codable {
 
 // MARK: - Links
 struct Links: Codable {
-    let homepage: [String]?
+    let homepage: [String]
 
     enum CodingKeys: String, CodingKey {
         case homepage
@@ -84,7 +84,6 @@ struct MarketData: Codable {
     let priceChange24HInCurrency, priceChangePercentage1HInCurrency, priceChangePercentage24HInCurrency, priceChangePercentage7DInCurrency: [String: Double]?
     let priceChangePercentage14DInCurrency, priceChangePercentage30DInCurrency, priceChangePercentage60DInCurrency, priceChangePercentage200DInCurrency: [String: Double]?
     let priceChangePercentage1YInCurrency, marketCapChange24HInCurrency, marketCapChangePercentage24HInCurrency: [String: Double]?
-    let lastUpdated: String?
 
     enum CodingKeys: String, CodingKey {
         case currentPrice = "current_price"
@@ -120,6 +119,7 @@ struct MarketData: Codable {
         case priceChangePercentage1YInCurrency = "price_change_percentage_1y_in_currency"
         case marketCapChange24HInCurrency = "market_cap_change_24h_in_currency"
         case marketCapChangePercentage24HInCurrency = "market_cap_change_percentage_24h_in_currency"
-        case lastUpdated = "last_updated"
     }
 }
+
+//typealias CryptoDetailModel = [CryptoDetailElementModel]

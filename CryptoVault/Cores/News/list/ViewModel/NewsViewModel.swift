@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class NewsViewModel: ObservableObject {
+final class NewsViewModel: ObservableObject {
 
     @Published var loading = false
     @Published var showAlert = false

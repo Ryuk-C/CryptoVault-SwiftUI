@@ -24,7 +24,7 @@ protocol ServiceProtocol {
     ) -> AnyPublisher<DataResponse<CryptoDetailModel, NetworkError>, Never>
 
     func fetchCustomCryptoMarketList(
-        ids: [String],
+        ids: String,
         currency: Currencies
     ) -> AnyPublisher<DataResponse<CustomCryptoMarketModel, NetworkError>, Never>
 }
@@ -115,10 +115,10 @@ extension Service: ServiceProtocol {
     }
 
     func fetchCustomCryptoMarketList(
-        ids: [String], currency: Currencies
+        ids: String, currency: Currencies
     ) -> AnyPublisher<Alamofire.DataResponse<CustomCryptoMarketModel, NetworkError>, Never> {
 
-        let url = URL(string: Constants.BASE_URL)!
+        let url = URL(string: Constants.CUSTOM_MARKET_BASE_URL)!
 
         let parameters: Parameters = [
             "ids": ids,

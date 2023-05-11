@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SavedNewsViewModel: ObservableObject {
+final class SavedNewsViewModel: ObservableObject {
     
     @Published internal var favNews: [NewsDatabase] = []
     

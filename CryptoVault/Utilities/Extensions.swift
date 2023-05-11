@@ -7,6 +7,20 @@
 
 import Foundation
 import SwiftUI
+import WebKit
+import SafariServices
+
+struct SFSafariViewWrapper: UIViewControllerRepresentable {
+    let url: URL
+    func makeUIViewController(context: UIViewControllerRepresentableContext<Self>) -> SFSafariViewController {
+
+        return SFSafariViewController(url: url)
+    }
+
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SFSafariViewWrapper>) {
+        return
+    }
+}
 
 extension UIColor {
     
@@ -136,6 +150,25 @@ struct BlurView: View {
             }
         }
     }
+}
+
+struct HTMLText: UIViewRepresentable {
+
+   let html: String
+
+   func makeUIView(context: UIViewRepresentableContext<Self>) -> UILabel {
+        let label = UILabel()
+        DispatchQueue.main.async {
+            let data = Data(self.html.utf8)
+            if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+                label.attributedText = attributedString
+            }
+        }
+
+        return label
+    }
+
+    func updateUIView(_ uiView: UILabel, context: Context) {}
 }
 
 public struct RefreshableScrollView<Content: View>: View {
