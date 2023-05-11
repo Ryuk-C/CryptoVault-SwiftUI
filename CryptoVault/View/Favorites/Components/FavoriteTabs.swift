@@ -64,13 +64,13 @@ struct Tabs: View {
         })
     }
 }
-/*truct Tabs_Previews: PreviewProvider {
+struct Tabs_Previews: PreviewProvider {
     static var previews: some View {
 
-        /*Tabs(fixed: true,
+        Tabs(fixed: true,
             tabs: [.init(icon: Image(systemName: "bitcoinsign.circle.fill"), title: "Crypto"),
                     .init(icon: Image(systemName: "newspaper.fill"), title: "News")],
             geoWidth: 375,
             selectedTab: .constant(0))
-    }*/
-}*/
+    }
+}

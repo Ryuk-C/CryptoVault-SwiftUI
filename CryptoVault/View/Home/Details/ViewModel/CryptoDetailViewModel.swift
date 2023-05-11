@@ -12,13 +12,12 @@ class CryptoDetailViewModel: ObservableObject {
 
     @Published var loading = false
     @Published var showAlert = false
+    @Published var cryptoSaved = false
     @Published var message: String = ""
     @Published var success: String = ""
     @Published var cryptoDetailList = [CryptoDetailModel]()
 
     @Published var savedCryptoData: [CryptoDatabase] = []
-    var added = false
-    var removed = false
     @Published internal var favButtonImageName = "star"
 
     private var cancellableSet: Set<AnyCancellable> = []
@@ -31,6 +30,12 @@ class CryptoDetailViewModel: ObservableObject {
     func addCrypto(crypto: CryptoCoreDataModel?) {
         if let crypto, !CoreDataManager.shared.isAlreadyFavoritedCrypto(crypto: crypto) {
             CoreDataManager.shared.addFavoriteCrypto(newCrypto: crypto)
+            cryptoSaved.toggle()
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
+
+                self.cryptoSaved.toggle()
+            }
         } else {
             if let index = CoreDataManager.shared.fetchFavoriteCrypto()?.firstIndex(where: { $0.id == crypto?.id }) {
                 CoreDataManager.shared.deleteFavoriteCrypto(indexSet: .init(integer: index))
@@ -49,10 +54,8 @@ class CryptoDetailViewModel: ObservableObject {
     func setFavButtonImage(crypto: CryptoCoreDataModel?) {
         if let crypto, CoreDataManager.shared.isAlreadyFavoritedCrypto(crypto: crypto) {
             self.favButtonImageName = "star.fill"
-            self.added = true
         } else {
             self.favButtonImageName = "star"
-            self.added = false
         }
     }
 
@@ -76,7 +79,8 @@ class CryptoDetailViewModel: ObservableObject {
                 self.message = "Oops, something went wrong. Please try again later."
                 self.showAlert = true
             }
-        }.store(in: &cancellableSet)
+        }
+            .store(in: &cancellableSet)
     }
 
     func createAlert(with error: NetworkError) {

@@ -27,7 +27,6 @@ final class CoreDataManager {
         try? container.viewContext.save()
     }
 
-
     // MARK: - Favorite News
     func fetchFavoriteNews() -> [NewsDatabase]? {
         let request = NSFetchRequest<NewsDatabase>(entityName: "NewsDatabase")

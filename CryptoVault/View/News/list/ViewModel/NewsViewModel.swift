@@ -1,20 +1,20 @@
 //
-//  HomeViewModel.swift
+//  NewsViewModel.swift
 //  CryptoVault
 //
-//  Created by Cuma Haznedar on 23/04/2023.
+//  Created by Cuma Haznedar on 24/04/2023.
 //
 
 import Combine
 import Foundation
 
-class HomeViewModel: ObservableObject {
+class NewsViewModel: ObservableObject {
 
     @Published var loading = false
     @Published var showAlert = false
     @Published var message: String = ""
-    @Published var success: String = ""
-    @Published var cryptoList = [CryptoMarketListElement]()
+    @Published var success: Int = 0
+    @Published var newsList = [Datum]()
 
     private var cancellableSet: Set<AnyCancellable> = []
     var dataManager: ServiceProtocol
@@ -23,28 +23,37 @@ class HomeViewModel: ObservableObject {
         self.dataManager = dataManager
     }
 
-    func fetchCryptoList(currency: Currencies) {
+    func fetchNewsList(language: Languages) {
 
         loading = true
         showAlert = false
 
-        dataManager.fetchCryptoMarketList(currency: currency)
+        dataManager.fetchLastNews(language: language)
             .sink { dataResponse in
 
             if dataResponse.error == nil {
 
-                self.cryptoList.removeAll()
-                self.cryptoList = dataResponse.value!
-                self.success = "OK"
-                self.showAlert = false
-                self.loading = false
+                self.success = dataResponse.value!.type
+
+                switch dataResponse.value!.type {
+
+                case 100:
+                    self.newsList.removeAll()
+                    self.newsList = dataResponse.value!.data
+
+                default:
+                    self.showAlert = true
+                    self.message = "Oops, something went wrong. Please try again later."
+                }
             } else {
 
-                self.loading = false
                 self.message = "Oops, something went wrong. Please try again later."
                 self.showAlert = true
             }
-        }.store(in: &cancellableSet)
+                
+                self.loading = false
+        }
+            .store(in: &cancellableSet)
     }
 
     func createAlert(with error: NetworkError) {

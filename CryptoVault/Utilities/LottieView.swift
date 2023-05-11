@@ -35,6 +35,7 @@ struct LottieView: UIViewRepresentable {
         animationView.translatesAutoresizingMaskIntoConstraints = false
         animationView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         animationView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        animationView.backgroundBehavior = .pauseAndRestore
 
         return view
     }

@@ -102,7 +102,9 @@ struct NewsPage: View {
                 tabBar.isHidden = false
             }
                 .alert(viewModel.message, isPresented: $viewModel.showAlert) {
-                Button("OK", role: .cancel) { }
+                Button("OK", role: .cancel) {
+
+                }
             }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -125,7 +127,7 @@ struct NewsPage: View {
             UINavigationBarAppearance()
                 .setColor(title: .white, background: .mainColor)
         }
-            .background(TabBarAccessor { tabbar in // << here !!
+            .background(TabBarAccessor { tabbar in
             self.tabBar = tabbar
         }
         )

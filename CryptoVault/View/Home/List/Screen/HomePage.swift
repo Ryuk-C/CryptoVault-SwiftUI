@@ -104,7 +104,8 @@ struct HomePage: View {
                                 ForEach((1...15).reversed(), id: \.self) { _ in
 
                                     CryptoListView(name: "Terra Luna Classic", symbol: "LUNA",
-                                        image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579", price: "2.974,25", priceChange: "0.49%"
+                                        image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
+                                                   price: "2.974,25", priceChange: "0.49%"
                                     )
                                         .redactShimmer(condition: viewModel.loading)
                                 }
@@ -112,7 +113,6 @@ struct HomePage: View {
                                 .padding(.bottom, 10)
                         }
                     }
-
                 }
 
                 NavigationLink(
@@ -122,7 +122,6 @@ struct HomePage: View {
                         .navigationBarTitle("", displayMode: .inline)
                     , isActive: $navigateToDetail) {
                 }
-
             }
                 .onAppear {
 
@@ -160,7 +159,7 @@ struct HomePage: View {
         }
             .background(
             TabBarAccessor
-            { tabbar in // << here !!
+            { tabbar in
                 self.tabBar = tabbar
             }
         )
