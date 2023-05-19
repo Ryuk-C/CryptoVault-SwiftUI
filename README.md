@@ -1,5 +1,5 @@
 ## CryptoVault App 💰
-CryptoVault shows you the current crypto market price and the news about crypto currencies.
+CryptoVault shows you the current crypto market price and the news about crypto currencies. You can create your own cryptocurrency and news list to follow.
 
 ## Tech stack 🏗
 * [SwiftUI](https://developer.apple.com/xcode/swiftui/)
@@ -9,6 +9,7 @@ CryptoVault shows you the current crypto market price and the news about crypto 
 * [Core Data](https://developer.apple.com/documentation/coredata)
 * [Kingfisher](https://github.com/onevcat/Kingfisher)
 * [Lottie](https://github.com/airbnb/lottie-ios)
+* [SwiftLint](https://github.com/realm/SwiftLint)
 * [Rest API](https://www.coingecko.com/en/api)
   * [CoinGecko](https://www.coingecko.com/en/api) - Crypto Currencies API
   * [CryptoCompare](https://min-api.cryptocompare.com) - News API
