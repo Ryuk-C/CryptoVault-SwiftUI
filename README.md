@@ -20,6 +20,9 @@ CryptoVault shows you the current crypto market price and the news about crypto 
 ## Detail Screen Screenshots 📷
 <img src="Media/cryptodetaıl.png" width="200" /> <img src="Media/newsdetail.png" width="200" />
 
+## UIKit Project
+- https://github.com/Ryuk-C/CryptoVault-UIKit
+
 ## App Video
 ----------
 https://github.com/Ryuk-C/CryptoVault-SwiftUI/assets/78587220/f8f2c6da-3e71-474b-a7c4-5b00650dcf82
