@@ -43,7 +43,6 @@
 		2B3B789F29F759F500FB3AEB /* Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B789E29F759F500FB3AEB /* Shimmering.swift */; };
 		2B3B78A129F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B78A029F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift */; };
 		2B3B78A729F7700D00FB3AEB /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B78A629F7700D00FB3AEB /* NewsDetailsViewModel.swift */; };
-		2B4C790729F42725007F7351 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C790629F42725007F7351 /* Constants.swift */; };
 		2B716CF329F9CCE200E45DBC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B716CF229F9CCE200E45DBC /* CoreDataManager.swift */; };
 		2B716CF829F9D86A00E45DBC /* NewsCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B716CF729F9D86A00E45DBC /* NewsCoreDataModel.swift */; };
 		2B716CFA29F9E1B300E45DBC /* anim_empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B716CF929F9E1B300E45DBC /* anim_empty.json */; };
@@ -63,6 +62,10 @@
 		2BF049442A0BE9EB00A462CC /* CryptoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF049432A0BE9EB00A462CC /* CryptoDetailViewModel.swift */; };
 		2BF049462A0BEE7700A462CC /* CryptoDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF049452A0BEE7700A462CC /* CryptoDetailModel.swift */; };
 		2BFFDFD02A0CA15A00FFF059 /* NewsDetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFFDFCF2A0CA15A00FFF059 /* NewsDetailsPage.swift */; };
+		B0666C7A2A2616B80088C8D4 /* CryptoEndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0666C792A2616B80088C8D4 /* CryptoEndPointProtocol.swift */; };
+		B0666C7C2A2616D10088C8D4 /* CryptoEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0666C7B2A2616D10088C8D4 /* CryptoEndPoints.swift */; };
+		B0666C7E2A2616EA0088C8D4 /* NewsEndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0666C7D2A2616EA0088C8D4 /* NewsEndPointProtocol.swift */; };
+		B0666C802A2616FD0088C8D4 /* NewsEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0666C7F2A2616FD0088C8D4 /* NewsEndPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +123,6 @@
 		2B3B789E29F759F500FB3AEB /* Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmering.swift; sourceTree = "<group>"; };
 		2B3B78A029F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactAndShimmerViewModifier.swift; sourceTree = "<group>"; };
 		2B3B78A629F7700D00FB3AEB /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
-		2B4C790629F42725007F7351 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2B716CF229F9CCE200E45DBC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2B716CF729F9D86A00E45DBC /* NewsCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCoreDataModel.swift; sourceTree = "<group>"; };
 		2B716CF929F9E1B300E45DBC /* anim_empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = anim_empty.json; sourceTree = "<group>"; };
@@ -139,6 +141,10 @@
 		2BF049432A0BE9EB00A462CC /* CryptoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailViewModel.swift; sourceTree = "<group>"; };
 		2BF049452A0BEE7700A462CC /* CryptoDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailModel.swift; sourceTree = "<group>"; };
 		2BFFDFCF2A0CA15A00FFF059 /* NewsDetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsPage.swift; sourceTree = "<group>"; };
+		B0666C792A2616B80088C8D4 /* CryptoEndPointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoEndPointProtocol.swift; sourceTree = "<group>"; };
+		B0666C7B2A2616D10088C8D4 /* CryptoEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoEndPoints.swift; sourceTree = "<group>"; };
+		B0666C7D2A2616EA0088C8D4 /* NewsEndPointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEndPointProtocol.swift; sourceTree = "<group>"; };
+		B0666C7F2A2616FD0088C8D4 /* NewsEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEndPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,9 +238,9 @@
 		2B041DB429F30FAB005127C7 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
-				2B041DC529F31190005127C7 /* Service.swift */,
-				2B0A2B6829F95039001DCB0F /* NetworkManager.swift */,
-				2B716CF229F9CCE200E45DBC /* CoreDataManager.swift */,
+				B0666C762A2616540088C8D4 /* EndPoints */,
+				B0666C752A26164F0088C8D4 /* Manager */,
+				B0666C742A2616490088C8D4 /* Service */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -296,7 +302,6 @@
 				2B0A2B6129F938AC001DCB0F /* Certificates.swift */,
 				2B041DCB29F312CF005127C7 /* LottieView.swift */,
 				2B041DD729F31770005127C7 /* Extensions.swift */,
-				2B4C790629F42725007F7351 /* Constants.swift */,
 				2BB4D65329F580DC00BD1FCF /* Currencies.swift */,
 				2BAE02ED29F68EB100A8F977 /* WebView.swift */,
 				2B3B789C29F7529800FB3AEB /* Languages.swift */,
@@ -568,6 +573,50 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
+		B0666C742A2616490088C8D4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2B041DC529F31190005127C7 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B0666C752A26164F0088C8D4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2B716CF229F9CCE200E45DBC /* CoreDataManager.swift */,
+				2B0A2B6829F95039001DCB0F /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B0666C762A2616540088C8D4 /* EndPoints */ = {
+			isa = PBXGroup;
+			children = (
+				B0666C782A2616700088C8D4 /* News */,
+				B0666C772A26166A0088C8D4 /* Crypto */,
+			);
+			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		B0666C772A26166A0088C8D4 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				B0666C792A2616B80088C8D4 /* CryptoEndPointProtocol.swift */,
+				B0666C7B2A2616D10088C8D4 /* CryptoEndPoints.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		B0666C782A2616700088C8D4 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				B0666C7D2A2616EA0088C8D4 /* NewsEndPointProtocol.swift */,
+				B0666C7F2A2616FD0088C8D4 /* NewsEndPoints.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -743,6 +792,7 @@
 				2BAE02EE29F68EB100A8F977 /* WebView.swift in Sources */,
 				2B91F4D129F9B5F900B27C0A /* PersistanceManager.swift in Sources */,
 				2B041DD829F31770005127C7 /* Extensions.swift in Sources */,
+				B0666C7E2A2616EA0088C8D4 /* NewsEndPointProtocol.swift in Sources */,
 				2B041DC629F31190005127C7 /* Service.swift in Sources */,
 				2B041DCC29F312CF005127C7 /* LottieView.swift in Sources */,
 				2B041DE329F31CF0005127C7 /* NewsPage.swift in Sources */,
@@ -751,6 +801,7 @@
 				2B3B78A129F75A2900FB3AEB /* RedactAndShimmerViewModifier.swift in Sources */,
 				2B3B789D29F7529800FB3AEB /* Languages.swift in Sources */,
 				2B20B54D29F98B7600838D05 /* CryptoVaultDatabase.xcdatamodeld in Sources */,
+				B0666C7A2A2616B80088C8D4 /* CryptoEndPointProtocol.swift in Sources */,
 				2B1E451929FBDFBD00021C47 /* SavedNewsViewModel.swift in Sources */,
 				2B1E451529FBDF1C00021C47 /* SavedCryptoPage.swift in Sources */,
 				2B041DDF29F31BB2005127C7 /* TabbarUIView.swift in Sources */,
@@ -771,12 +822,13 @@
 				2BB4D65229F57EEC00BD1FCF /* CryptoMarketModel.swift in Sources */,
 				2B1E451329FBDF0C00021C47 /* SavedNewsPage.swift in Sources */,
 				2BD762112A0C5F22002D3E0A /* Shimmer+Ext.swift in Sources */,
+				B0666C802A2616FD0088C8D4 /* NewsEndPoints.swift in Sources */,
 				2B1E451729FBDFAF00021C47 /* SavedCryptoViewModel.swift in Sources */,
 				2B0A2B6929F95039001DCB0F /* NetworkManager.swift in Sources */,
 				2BB4D65629F5828700BD1FCF /* HomeViewModel.swift in Sources */,
 				2B716CF329F9CCE200E45DBC /* CoreDataManager.swift in Sources */,
 				2BF049422A0BE9D900A462CC /* CryptoDetailPage.swift in Sources */,
-				2B4C790729F42725007F7351 /* Constants.swift in Sources */,
+				B0666C7C2A2616D10088C8D4 /* CryptoEndPoints.swift in Sources */,
 				2BF049442A0BE9EB00A462CC /* CryptoDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

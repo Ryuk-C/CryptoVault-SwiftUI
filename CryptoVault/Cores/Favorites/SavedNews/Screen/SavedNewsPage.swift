@@ -72,8 +72,8 @@ struct SavedNewsPage: View {
 
                 NavigationLink(
                     destination: NewsDetailsPage(id: id, url: newsUrl,
-                        source: newsSource ?? "News", title: newsTitle ?? "",
-                        urlToImage: newsImageUrl ?? "", publishedAt: newsPublishedAt ?? ""
+                        source: newsSource, title: newsTitle,
+                        urlToImage: newsImageUrl, publishedAt: newsPublishedAt
                     )
 
                         .onAppear { self.tabBar.isHidden = true }
@@ -87,7 +87,7 @@ struct SavedNewsPage: View {
 
                 guard let tabBar = tabBar else { return }
                 tabBar.isHidden = false
-            }        }
+            } }
     }
 }
 

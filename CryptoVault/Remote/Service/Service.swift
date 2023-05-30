@@ -29,11 +29,8 @@ protocol ServiceProtocol {
     ) -> AnyPublisher<DataResponse<CustomCryptoMarketModel, NetworkError>, Never>
 }
 
-class Service {
-
+final class Service {
     static let shared = Service()
-
-    private init() { }
 }
 
 extension Service: ServiceProtocol {
@@ -42,7 +39,7 @@ extension Service: ServiceProtocol {
         currency: Currencies
     ) -> AnyPublisher<Alamofire.DataResponse<CryptoMarketList, NetworkError>, Never> {
 
-        let url = URL(string: Constants.BASE_URL)!
+        let url = URL(string: CryptoEndPoints.fetchAllList.url)!
 
         let parameters: Parameters = [
             "vs_currency": currency
@@ -68,10 +65,10 @@ extension Service: ServiceProtocol {
 
     func fetchLastNews(language: Languages) -> AnyPublisher<Alamofire.DataResponse<NewsModel, NetworkError>, Never> {
 
-        let url = URL(string: Constants.NEWS_BASE_URL)!
+        let url = URL(string: NewsEndPoints.fetchAllNews.url)!
 
         let parameters: Parameters = [
-            "Apikey": Constants.NEWS_API_KEY,
+            "Apikey": NewsEndPoints.fetchAllNews.apiKey,
             "lang": language
         ]
 
@@ -95,7 +92,7 @@ extension Service: ServiceProtocol {
         id: String
     ) -> AnyPublisher<Alamofire.DataResponse<CryptoDetailModel, NetworkError>, Never> {
 
-        let url = URL(string: Constants.DETAILS_BASE_URL+id)!
+        let url = URL(string: CryptoEndPoints.fetchCryptoDetail.url + id)!
 
         let session = CryptoNetworkManager.getManager()
 
@@ -118,7 +115,7 @@ extension Service: ServiceProtocol {
         ids: String, currency: Currencies
     ) -> AnyPublisher<Alamofire.DataResponse<CustomCryptoMarketModel, NetworkError>, Never> {
 
-        let url = URL(string: Constants.CUSTOM_MARKET_BASE_URL)!
+        let url = URL(string: CryptoEndPoints.fetchCustomList.url)!
 
         let parameters: Parameters = [
             "ids": ids,

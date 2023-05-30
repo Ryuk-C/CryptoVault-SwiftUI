@@ -106,7 +106,7 @@ struct CryptoDetailPage: View {
                                                         .font(.system(size: 20, weight: .bold, design: .rounded))
                                                         .foregroundColor(.black)
 
-                                                    Text(crypto.symbol!.uppercased() ?? "")
+                                                    Text(crypto.symbol!.uppercased() )
                                                         .font(.system(size: 15, weight: .semibold, design: .rounded))
                                                         .foregroundColor(.black.opacity(0.7))
                                                 }.padding(.leading, 5)

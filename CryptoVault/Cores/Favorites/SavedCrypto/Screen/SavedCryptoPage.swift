@@ -21,7 +21,7 @@ struct SavedCryptoPage: View {
     @StateObject private var viewModel = SavedCryptoViewModel()
 
     var body: some View {
-        
+
         ZStack {
 
             Color("backgroundcolor").ignoresSafeArea()
@@ -38,7 +38,7 @@ struct SavedCryptoPage: View {
 
                                 CryptoListView(name: "Terra Luna Classic", symbol: "LUNA",
                                     image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
-                                               price: "2.974,25", priceChange: "0.49%"
+                                    price: "2.974,25", priceChange: "0.49%"
                                 )
                                     .redactShimmer(condition: viewModel.loading)
                             }
@@ -66,20 +66,20 @@ struct SavedCryptoPage: View {
                             ForEach(viewModel.cryptoList, id: \.id) { list in
 
                                 CryptoListView(name: list.name!, symbol: (list.symbol?.uppercased())!,
-                                               image: list.image!, price: String(list.currentPrice ?? 0),
-                                               priceChange: String(list.priceChangePercentage24H!)
+                                    image: list.image!, price: String(list.currentPrice),
+                                    priceChange: String(list.priceChangePercentage24H!)
                                 ).onTapGesture {
 
                                     selectedCryptoId = list.id!
                                     selectedCryptoName = list.name!
-                                    selectedCryptoPrice = String(list.currentPrice ?? 0)
+                                    selectedCryptoPrice = String(list.currentPrice)
                                     navigateToDetail.toggle()
                                 }
                             }
                         }
                             .padding(.bottom, 10)
                     }
-                    .padding(.top, 15)
+                        .padding(.top, 15)
                 }
             }
 
@@ -89,7 +89,7 @@ struct SavedCryptoPage: View {
                 , isActive: $navigateToDetail) {
             }
 
-            .onAppear {
+                .onAppear {
 
                 viewModel.getFavNews()
             }
