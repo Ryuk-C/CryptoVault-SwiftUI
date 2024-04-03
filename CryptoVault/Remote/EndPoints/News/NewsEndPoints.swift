@@ -18,7 +18,7 @@ enum NewsEndPoints: CryptoEndPointProtocol {
     var path: String {
         return "data/v2/"
     }
-    
+
     var serviceUrl: String {
 
         switch self {
@@ -27,8 +27,8 @@ enum NewsEndPoints: CryptoEndPointProtocol {
             return "news/"
         }
     }
-    
+
     var apiKey: String {
-         return "172f656d6f3196ea6bd6416cddc48c7bf17476b17f6f397755c9ee3fe250fbd6"
+        return "172f656d6f3196ea6bd6416cddc48c7bf17476b17f6f397755c9ee3fe250fbd6"
     }
 }

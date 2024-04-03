@@ -56,3 +56,4 @@ disabled_rules:
 - strict_fileprivate
 - trailing_whitespace
 - weak_delegate
+- function_body_length
